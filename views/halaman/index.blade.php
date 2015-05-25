@@ -13,6 +13,7 @@
                     @endforeach
                 </ul>
             </div>
+            @if(count(best_seller()) > 0)
             <div id="best-seller" class="block">
                 <div class="title"><h2>Best <strong>Seller</strong></h2></div>
                 <ul class="block-content">
@@ -23,7 +24,7 @@
                                 {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
                             </div>
                             <p class="product-name">{{short_description($bestproduk->nama,15)}}</p>
-                            @if(!empty($bestproduk))
+                            @if(!empty($bestproduk->hargaCoret))
                             <p class="author"><del>{{price($bestproduk->hargaCoret)}}</del></p>
                             @endif
                             <p class="price">{{price($bestproduk->hargaJual)}}</p> 
@@ -31,8 +32,9 @@
                     </li>
                     @endforeach
                 </ul>
-                <div class="btn-more"><a href="{{url('produk')}}">view more</a></div>
+                <div class="btn-more"><a href="{{url('koleksi/best-seller')}}">view more</a></div>
             </div>
+            @endif
             <div id="advertising" class="block">
                 @foreach(vertical_banner() as $banners)
             	<div class="img-block">

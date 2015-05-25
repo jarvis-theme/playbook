@@ -37,13 +37,16 @@
                     </ul>
                 </div>                
                 <div id="latest-news" class="block">
-                    <div class="title"><h2>Artikel Terbaru</h2></div>
+                    <div class="title"><h2>Koleksi</h2></div>
                     <ul class="block-content">
-                        @foreach(list_blog(2) as $blogs)
+                        @foreach(list_koleksi() as $kol)
                         <li>
-                            <h5 class="title-news">{{$blogs->judul}}</h5>
-                            <p>{{short_description($blogs->isi, 150)}}<a class="read-more" href="{{blog_url($blogs)}}">Read More</a></p>
-                            <span class="date-post">{{date("F d, Y", strtotime($blogs->created_at))}}</span>
+                            <div class="col-sm-6 col-xs-6 img-block">
+                                <a href="{{koleksi_url($kol)}}">
+                                    {{ HTML::image(koleksi_image_url($kol->gambar,'thumb'),$kol->nama, array('class' => 'img-responsive' ))}}
+                                </a>
+                            </div>
+                            <a href="{{koleksi_url($kol)}}" class="col-sm-6 col-xs-6" style="margin: 15px 0;">{{$kol->nama}}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -161,7 +164,7 @@
                         <div class="btm-details">
                         	<div class="bank-logo fl">
                                 @foreach(list_banks() as $value)
-                                <img src="{{bank_logo($value)}}" />
+                                <img class="banks img-responsive" src="{{bank_logo($value)}}" />
                                 @endforeach
                             </div>
                             <div class="button-detail fr">

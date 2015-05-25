@@ -35,7 +35,8 @@
                             @endif
                         @endforeach
                     </ul>
-                </div> 
+                </div>
+                @if(count(best_seller()) > 0)
                 <div id="best-seller" class="block">
                     <div class="title"><h2>Best <strong>Seller</strong></h2></div>
                     <ul class="block-content">
@@ -54,8 +55,9 @@
                         </li>
                         @endforeach
                     </ul>
-                    <div class="btn-more"><a href="{{url('produk')}}">view more</a></div>
+                    <div class="btn-more"><a href="{{url('koleksi/best-seller')}}">view more</a></div>
                 </div>
+                @endif
                 <div id="latest-news" class="block">
                     <div class="title"><h2>Artikel Terbaru</h2></div>
                     <ul class="block-content">

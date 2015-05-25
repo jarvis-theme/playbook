@@ -38,34 +38,41 @@
                     @endforeach
                 </ul>
             </div>
+            @if(count(best_seller()) > 0)
             <div id="best-seller" class="block">
             	<div class="title"><h2>Best <strong>Seller</strong></h2></div>
             	<ul class="block-content">
-                    @foreach(best_seller() as $besproduk )
+                    @foreach(best_seller() as $bestproduk )
                     <li>
-                    	<a href="{{product_url($besproduk)}}">
+                    	<a href="{{product_url($bestproduk)}}">
                         	<div class="img-block">
-                            {{HTML::image(product_image_url($besproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
+                            {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
                             </div>
-                            <p class="product-name">{{short_description($besproduk->nama,15)}}</p>
-                            <p class="author"><del>{{price($besproduk->hargaCoret)}}</del></p>
-                            <p class="price">{{price($besproduk->hargaJual)}}</p> 
+                            <p class="product-name">{{short_description($bestproduk->nama,15)}}</p>
+                            @if(!empty($bestproduk->hargaCoret))
+                            <p class="author"><del>{{price($bestproduk->hargaCoret)}}</del></p>
+                            @endif
+                            <p class="price">{{price($bestproduk->hargaJual)}}</p> 
                         </a>
                     </li>
                     @endforeach
                 </ul>
                 <div class="btn-more">
-                    <a href="{{url('produk')}}">view more</a>
+                    <a href="{{url('koleksi/best-seller')}}">view more</a>
                 </div>
             </div>
+            @endif
             <div id="latest-news" class="block">
-                <div class="title"><h2>Artikel Terbaru</h2></div>
+                <div class="title"><h2>Koleksi</h2></div>
                 <ul class="block-content">
-                    @foreach(list_blog(2) as $blogs)
+                    @foreach(list_koleksi() as $kol)
                     <li>
-                        <h5 class="title-news">{{$blogs->judul}}</h5>
-                        <p>{{short_description($blogs->isi, 150)}}<a class="read-more" href="{{blog_url($blogs)}}">Read More</a></p>
-                        <span class="date-post">{{date("F d, Y", strtotime($blogs->created_at))}}</span>
+                        <div class="col-sm-6 col-xs-6 img-block">
+                            <a href="{{koleksi_url($kol)}}">
+                                {{ HTML::image(koleksi_image_url($kol->gambar,'thumb'),$kol->nama, array('class' => 'img-responsive' ))}}
+                            </a>
+                        </div>
+                        <a href="{{koleksi_url($kol)}}" class="col-sm-6 col-xs-6" style="margin: 15px 0;">{{$kol->nama}}</a>
                     </li>
                     @endforeach
                 </ul>
@@ -82,7 +89,7 @@
         	<div class="product-list">
             	<div class="row">
                     <ul class="grid">
-                    @if(count(list_product(null, @$category)) > 0)
+                    @if(count(list_product(null, @$category,@$collection)) > 0)
                         @foreach(list_product(null, @$category) as $produks)
                         <li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                             <div class="prod-container">
@@ -110,7 +117,7 @@
                         </li>
                         @endforeach
                     @else
-                        <article style="font-style:italic; text-align:center;">
+                        <article class="search-result">
                             Produk tidak ditemukan
                         </article>
                     @endif  
@@ -119,7 +126,7 @@
             </div><!--.product_list-->
             <div class="clr"></div>
             <div class="content_sortPagiBar">
-            	{{list_product(null, @$category)->links()}}
+            	{{list_product(null, @$category, @$collection)->links()}}
                 <div class="clr"></div>
             </div>
         </div> <!--.center_column-->

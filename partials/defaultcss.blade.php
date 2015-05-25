@@ -11,7 +11,7 @@
         {{generate_theme_css('playbook/assets/css/owl.carousel.css')}}
         {{generate_theme_css('playbook/assets/css/owl.theme.css')}}
         {{generate_theme_css('playbook/assets/css/jquery.fancybox.css')}}
-        {{createFavicon($toko)}}
+        {{favicon()}}
 
         {{generate_theme_js('playbook/assets/js/modernizr.custom.28468.js')}}
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>

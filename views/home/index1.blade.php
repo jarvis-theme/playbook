@@ -44,7 +44,7 @@
                 <div id="trending-home" class="product_home">
                     <div class="block-title">
                         <h2 class="fl">Best <strong>Seller</strong></h2>
-                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
+                        <a class="view-shop fr" href="{{url('koleksi/best-seller')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">

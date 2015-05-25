@@ -5,7 +5,7 @@
 @endif
 @if(Session::has('error'))
     <div class="error" id='message' style='display:none'>
-        {{Session::get('error')}}!!!
+        {{Session::get('error')}}!
     </div>
 @endif
 @if(Session::has('errorrecovery'))
@@ -33,6 +33,7 @@
             <div class="input-group">
                 <a href="{{url('member/create')}}" class="btn btn-info">Daftar</a>
             </div>
+            <br><br>
         </div>
         <div id="center_column" class="col-lg-4 col-md-offset-2">
             <form class="form-horizontal" action="{{url('member/forgetpassword')}}" method="post">

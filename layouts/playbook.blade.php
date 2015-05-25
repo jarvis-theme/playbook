@@ -7,7 +7,7 @@
         {{ Theme::partial('defaultcss') }}  
         {{ Theme::asset()->styles() }}  
     </head>
-    <body class="hide">
+    <body>
         <div class="preloader"></div>
         <div class="page">
             <!--header-->

@@ -879,3 +879,44 @@ a.theme:hover {color:#000000;}
 .social-btn:hover .first-link{
   margin-top: -1.7em;
 }
+.fb_reset {display: inline-block;}
+.fb-share-button {top: -5px;}
+.sidebar-items > form > input[type="submit"]{
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	  touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	 -moz-user-select: none;
+	  -ms-user-select: none;
+	      user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	color: #fff;
+	margin-top: 10px;
+	background-color: #5bc0de;
+}
+.sidebar-items > form > input[type="submit"]:hover,
+.sidebar-items > form > input[type="submit"]:focus,
+.sidebar-items > form > input[type="submit"].focus,
+.sidebar-items > form > input[type="submit"]:active,
+.sidebar-items > form > input[type="submit"].active{
+  color: #fff;
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.search-result {font-style:italic; text-align:center;}
+.bank-logo {display: inline-block;}
+.banks {display: inline;}
+@media only screen and (max-width: 480px) {
+	.banks {max-width: 45%;}
+}

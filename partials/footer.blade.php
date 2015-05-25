@@ -5,7 +5,11 @@
                             <div class="split-blue">&nbsp;</div>
                             <h2>Newsletter</h2>
                             <div class="block-content">
-                                <p>Jadilah orang pertama yang mendapatkan info produk terbaru, dan promo dari kami. <br>Daftarkan email anda dan dapatkan segera promo menarik.</p>
+                                <p>
+                                    Jadilah orang pertama yang mendapatkan info produk terbaru, dan promo dari kami.
+                                    <br><br>
+                                    Daftarkan email anda dan dapatkan segera promo menarik.
+                                </p>
                                 <form class="newsletter-form inputfooter" action="{{@$mailing->action}}" method="post" target="_blank" novalidate>
                                     <input class="input-newsletter"  type="text" value="" {{ @$mailing->action==''?'disabled="disabled"':'' }} placeholder="Enter your email" name="EMAIL" class="input-medium required email" id="newsletter mce-EMAIL"/>
                                     <div class="fr ">
@@ -96,7 +100,7 @@
                                     	<h4>Social Media</h4>
                                         @if(!empty($kontak->fb))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{url($kontak->fb)}}">
+                                            <a class="first-link" href="{{url($kontak->fb)}}" target="_blank">
                                                 <i class="fa fa-facebook"></i>
                                             </a>
                                             <a href="{{url($kontak->fb)}}"><i class="fa fa-facebook"></i></a>
@@ -104,7 +108,7 @@
                                         @endif
                                         @if(!empty($kontak->tw))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{url($kontak->tw)}}">
+                                            <a class="first-link" href="{{url($kontak->tw)}}" target="_blank">
                                                 <i class="fa fa-twitter"></i>
                                             </a>
                                             <a href="{{url($kontak->tw)}}"><i class="fa fa-twitter"></i></a>
@@ -112,7 +116,7 @@
                                         @endif
                                         @if(!empty($kontak->gp))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{url($kontak->gp)}}">
+                                            <a class="first-link" href="{{url($kontak->gp)}}" target="_blank">
                                                 <i class="fa fa-google"></i>
                                             </a>
                                             <a href="{{url($kontak->gp)}}"><i class="fa fa-google"></i></a>
@@ -120,7 +124,7 @@
                                         @endif
                                         @if(!empty($kontak->pt))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{url($kontak->pt)}}">
+                                            <a class="first-link" href="{{url($kontak->pt)}}" target="_blank">
                                                 <i class="fa fa-pinterest"></i>
                                             </a>
                                             <a href="{{url($kontak->pt)}}"><i class="fa fa-pinterest"></i></a>
@@ -128,7 +132,7 @@
                                         @endif
                                         @if(!empty($kontak->tl))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{$kontak->tl}}">
+                                            <a class="first-link" href="{{$kontak->tl}}" target="_blank">
                                                 <i class="fa fa-tumblr"></i>
                                             </a>
                                             <a href="{{$kontak->tl}}"><i class="fa fa-tumblr"></i></a>
@@ -136,7 +140,7 @@
                                         @endif
                                         @if(!empty($kontak->ig))
                                         <div class="social-btn">
-                                            <a class="first-link" href="{{url($kontak->ig)}}">
+                                            <a class="first-link" href="{{url($kontak->ig)}}" target="_blank">
                                                 <i class="fa fa-instagram"></i>
                                             </a>
                                             <a href="{{url($kontak->ig)}}"><i class="fa fa-instagram"></i></a>

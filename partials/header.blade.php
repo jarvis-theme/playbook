@@ -35,9 +35,10 @@
                             </h2>
                             @endif
                         </div>
-                        {{shopping_cart()}}
+                        <div id="shoppingcartplace">
+                            {{shopping_cart()}}
+                        </div>
                         <div id="search-top" class="fr">
-
                         	<form class="navbar-form" role="search" action="{{url('search')}}"  method="post">
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Search" name="search" required>
@@ -65,11 +66,9 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav">
-                                
                                 @foreach(main_menu()->link as $key=>$link)
                                 <li><a href="{{menu_url($link)}}">{{$link->nama}}</a></li>
                                 @endforeach
-
                             </ul>   
                         </div>
                 	</div>

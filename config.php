@@ -32,7 +32,6 @@ return array(
         'beforeRenderTheme' => function($theme)
         {
             // You may use this event to set up your assets.
-            //$theme->asset()->usePath()->add('name', 'test.js');
         },
 
         // Listen on event before render layout.
@@ -50,10 +49,10 @@ return array(
     ),
     'num_display' => array(
         'home_product'=>8,
-        'main_product'=>8,
+        'main_product'=>12,
         'related_product'=>4,
         'latest_product'=>5,
-        'bestseller'=>3,
+        'bestseller'=>5,
         'featured'=>3,
         'blog'=>3,
         'testimonial'=>5,    

@@ -16,7 +16,7 @@
                 @foreach(horizontal_banner() as $banners)
                 <div class="col-sm-12">
                     <div class="adv-full">
-                        <a href="{{URL::to($banners->url)}}">
+                        <a href="{{url($banners->url)}}">
                             {{HTML::image(banner_image_url($banners->gambar),'banner',array('width'=>'1181','height'=>'80'))}}
                         </a>
                     </div>

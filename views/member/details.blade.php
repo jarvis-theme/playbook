@@ -34,8 +34,8 @@
             <div id="advertising" class="block">
             	<div class="title"><h2>My Account</h2></div>
             	<ul class="nav">
-					<li><a href="{{URL::to('member')}}">Order History</a></li>                         
-					<li><a href="{{URL::to('member/profile/edit')}}">Edit Profile</a></li>
+					<li><a href="{{url('member')}}">Order History</a></li>                         
+					<li><a href="{{url('member/profile/edit')}}">Edit Profile</a></li>
 				</ul>
             </div>            
         </div>
@@ -45,9 +45,9 @@
 						<div class="table-responsive">
 						<table class="table table-hover">
 							<thead>
-								<tr>
+								<tr class="active">
 									<th><span>ID Order</span></th>
-									<th class="desc"><span>Tanggal Order</span></th>
+									<th><span>Tanggal Order</span></th>
 									<th><span>Detail Order</span></th>
 									<th><span>Total Order</span></th>
 									<th><span>No. Resi</span></th>
@@ -72,7 +72,7 @@
 											{{waktu($item->tanggalOrder)}}
 										@endif	
 									</td>
-									<td class="desc">
+									<td>
 										<ul>
 										@if($pengaturan->checkoutType==3) 
 											<li>{{$item->preorderdata->produk->nama}} ({{$item->opsiSkuId==0 ? 'No Opsi' : $item->opsisku->opsi1.($item->opsisku->opsi2!='' ? ' / '.$item->opsisku->opsi2:'').($item->opsisku->opsi3!='' ? ' / '.$item->opsisku->opsi3:'')}}) - {{$item->jumlah}}<li>
@@ -86,7 +86,7 @@
 										</ul>
 									</td>
 									<td class="quantity">
-										{{ jadiRupiah($item->total)	}}
+										{{ price($item->total)	}}
 									</td>
 									<td class="sub-price">
 										{{ $item->noResi }}
@@ -138,12 +138,12 @@
 									<td style="text-align: center;">
 									@if($pengaturan->checkoutType==3) 
 										@if($item->status < 4)
-										<button onclick="window.open('{{URL::to('konfirmasipreorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
+										<button onclick="window.open('{{url('konfirmasipreorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
 										@endif 
 									@endif
 									@if($pengaturan->checkoutType==1) 
 										@if($item->status <= 1)
-										<button onclick="window.open('{{URL::to('konfirmasiorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
+										<button onclick="window.open('{{url('konfirmasiorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
 										@endif 
 									@endif
 									</td>
@@ -151,8 +151,8 @@
 							@endforeach
 							</tbody>
 						</table>
-                        {{$order->links()}} 
 						</div>
+                        {{$order->links()}} 
 					@else
 						<span> Belum ada data order</span>
 					@endif

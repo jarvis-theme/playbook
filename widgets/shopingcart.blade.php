@@ -1,4 +1,3 @@
-
 <div id="shopping-cart" class="fr counter">
     <a href="{{url('checkout')}}" class="cart-btn">
     	<span class="ttl-cart">
