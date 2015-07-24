@@ -1,27 +1,3 @@
-@if($errors->all())
-<div class="alert alert-error">
-	We encountered the following errors:
-	<br>
-	<ul>
-		@foreach($errors->all() as $message)
-		<li>{{ $message }}</li>
-		@endforeach
-	</ul>
-</div>
-@endif
-
-@if(Session::has('error'))
-<div class="alert alert-error">
-	<p>Password lama anda tidak benar, silakan coba lagi.</p>
-</div>
-@endif
-
-@if(Session::has('success'))
-<div class="success" id='message' style='display:none'>
-	<p>Informasi anda berhasil di update.</p>
-</div>
-@endif
-
 <div class="top-list container">
     <h2 class="title"><i class="fa fa-history"></i> &nbsp;Order History</h2>
     <div class="clr"></div>
@@ -138,12 +114,12 @@
 									<td style="text-align: center;">
 									@if($pengaturan->checkoutType==3) 
 										@if($item->status < 4)
-										<button onclick="window.open('{{url('konfirmasipreorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
+										<button onclick="window.open('{{url('konfirmasipreorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-external-link"></i></button>
 										@endif 
 									@endif
 									@if($pengaturan->checkoutType==1) 
 										@if($item->status <= 1)
-										<button onclick="window.open('{{url('konfirmasiorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-check"></i></button>
+										<button onclick="window.open('{{url('konfirmasiorder/'.$item->id)}}','_blank')" class="btn btn-small btn-success" data-title="Edit" data-placement="top" data-tip="tooltip"><i class="fa fa-external-link"></i></button>
 										@endif 
 									@endif
 									</td>

@@ -43,7 +43,7 @@
                             <div id="about-foot" class="col-xs-12 col-sm-4">
                             	<h4 class="title">About Us</h4>
                             	<div class="block-content">
-                                    <p>{{short_description($aboutUs[1]->isi,400)}}</p>
+                                    <p>{{short_description(about_us()->isi,400)}}</p>
                                 </div>
                             </div>
 

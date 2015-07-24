@@ -65,7 +65,7 @@
                     	<div class="row">
                         	<div id="prod-left" class="col-lg-6 col-xs-12 col-sm-6">
                             	<div class="big-image">
-                                    {{HTML::image(product_image_url($produk->gambar1),'produk',array('width'=>'292','height'=>'392'))}}
+                                    {{HTML::image(product_image_url($produk->gambar1,'medium'),'produk')}}
                                     <a class="zoom fancybox" href="{{product_image_url($produk->gambar1)}}" title="{{$produk->nama}}">&nbsp;</a>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                                 	<li class="item col-xs-4">
                                                         <div class="img-container">
                                                             <a class="fancybox" href="{{product_image_url($produk->gambar2)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar2),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                                {{HTML::image(product_image_url($produk->gambar2,'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -138,7 +138,7 @@
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
                                                             <a class="fancybox" href="{{product_image_url($produk->gambar3)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar3),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                                {{HTML::image(product_image_url($produk->gambar3.'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -146,8 +146,8 @@
                                                     @if($produk->gambar4!='')
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
-                                                            <a class="fancybox" href="{{product_image_url($produk->gambar2)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar4),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                            <a class="fancybox" href="{{product_image_url($produk->gambar4)}}" title="{{$produk->nama}}">
+                                                                {{HTML::image(product_image_url($produk->gambar4,'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -185,7 +185,7 @@
                                 <div class="prod-container">
                                     <div class="image-container">
                                         <a href="{{product_url($relproduk)}}">
-                                            {{HTML::image(product_image_url($relproduk->gambar1),'produk',array('class'=>'img-responsive'))}}
+                                            {{HTML::image(product_image_url($relproduk->gambar1,'medium'),'produk',array('class'=>'img-responsive'))}}
                                         </a>
                                         @if(is_outstok($relproduk))
                                         <div class="icon-info icon-sold">Sold</div>

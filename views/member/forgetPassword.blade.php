@@ -1,29 +1,3 @@
-@if(Session::has('errorlogin'))
-    <div class="error" id='message' style='display:none'>
-        <p>Maaf, email atau password anda salah.</p>
-    </div>
-@endif
-@if(Session::has('error'))
-    <div class="error" id='message' style='display:none'>
-        {{Session::get('error')}}!
-    </div>
-@endif
-@if(Session::has('errorrecovery'))
-    <div class="error" id='message' style='display:none'>
-        <p>Maaf, email anda tidak ditemukan.</p>
-    </div>
-@endif
-@if(Session::has('forget'))
-<div class="success" id='message' style='display:none'>
-    <p>Cek email untuk me-reset password anda!</p>
-</div>  
-@endif
-@if(Session::has('error'))
-<div class="error" id='message' style='display:none'>
-    <p>{{Session::get('error')}}</p>
-</div>  
-@endif
-
 <div class="container">
     <div class="inner-column row">
         <div id="center_column" class="col-lg-4 col-xs-12 col-sm-4">
@@ -37,7 +11,9 @@
         </div>
         <div id="center_column" class="col-lg-4 col-md-offset-2">
             <form class="form-horizontal" action="{{url('member/forgetpassword')}}" method="post">
-                <h2>Lupa Password</h2><hr><br>
+                <h2>Lupa Password</h2><hr>
+                <p>Kamu dapat mereset password akun kamu dengan memasukkan alamat email yang kamu gunakan saat mendaftar.</p>
+                <br>
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Email" name="recoveryEmail" required>
                     <span class="input-group-btn">

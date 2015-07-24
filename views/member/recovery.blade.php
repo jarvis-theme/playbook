@@ -1,18 +1,12 @@
 <div class="container">
 	<div class="inner-column row">
         <div id="center_column" class="col-lg-9 col-xs-12">
-    		<p>Silahkan Login untuk kemudahan melakukan checkout. Cepat dan Mudah dalam bertransaksi. Mudah untuk mengetahui status dan riwayat order kamu.</p>
+    		<p>Kamu bisa menggati password lama kamu dengan yang baru melalui halaman ini.</p>
 			<br>
-			<h2>Log in</h2>
+			<h2>Reset Password</h2>
 			<hr>
 			<br>
-            <form class="form-horizontal" action="{{url('member/login')}}" method="post">
-				<div class="form-group">
-			    	<label for="inputEmail3" class="col-sm-2">Email</label>
-			    	<div class="col-sm-4">
-			    		<input type="email" class="form-control" name="email" placeholder="Email" value="{{Input::old('email')}}" required>
-			    	</div>
-				</div>
+            <form class="form-horizontal" action="{{url('member/recovery/'.$id.'/'.$code)}}" method="post">
 				<div class="form-group">
 			    	<label for="inputPassword3" class="col-sm-2">Password</label>
 					<div class="col-sm-4">
@@ -20,15 +14,14 @@
 			   		</div>
 				</div>
 				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<small>
-							<a href="{{url('member/forget-password')}}">Lupa Password?</a>
-						</small>
-					</div>
+			    	<label for="inputPassword3" class="col-sm-2">Konfirmasi password</label>
+					<div class="col-sm-4">
+			    		<input type="password" class="form-control" name="password_confirmation" placeholder="Konfirmasi password" required>
+			   		</div>
 				</div>
 				<div class="form-group">
 					<div class="pull-left col-sm-2">
-						<button type="submit" class="btn btn-success">Log in</button>
+						<button type="submit" class="btn btn-success">Reset</button>
 					</div>
 					<div class="pull-right col-sm-4">
 						<small>Belum punya akun?</small>

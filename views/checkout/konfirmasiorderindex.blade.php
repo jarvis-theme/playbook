@@ -1,9 +1,3 @@
-@if(Session::has('message'))
-<div class="error" id='message' style='display:none'>
-	<p>Maaf, kode order anda tidak ditemukan.</p>					
-</div>
-@endif
-
 <div class="container">
 	<div class="inner-column row">
         <div id="left_sidebar" class="col-lg-3 col-xs-12">
@@ -22,7 +16,7 @@
 	            <h2 class="title">Konfirmasi Order</h2>
 				{{Form::open(array('url'=>'konfirmasiorder','method'=>'post','class'=>'form-inline'))}}
 		            <div class="input-group col-lg-12">
-                    	<input class="form-control" placeholder="Kode Order" type="text" required>
+                    	<input class="form-control" placeholder="Kode Order" type="text" name="kodeorder" required>
                     	<span class="input-group-btn">
 	                    	<button class="btn btn-success" type="submit">Cari Kode</button>
                     	</span>

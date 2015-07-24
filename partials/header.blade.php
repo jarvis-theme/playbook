@@ -2,14 +2,18 @@
             	<div id="top-head">
                 	<div class="container">
                         @if( is_login() )
-                        <div class="user-info fl">
-                            Welcome, <a href="{{url('member')}}" class="username"><strong>{{user()->nama}}</strong></a>
-                        </div>
+                        
                         <div class="auth-block fr">
                             <ul>
                                 <li>{{HTML::link('logout', 'Logout')}}</li>
                             </ul>
                         </div>
+
+                        <div class="user-info fr">
+                            Welcome, <a href="{{url('member')}}" class="username"><strong>{{user()->nama}}</strong></a>
+                        </div>
+
+                        
                         @else
                         <div class="auth-block fr">
                         	<ul>

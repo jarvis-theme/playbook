@@ -55,7 +55,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($best)}}">
-                                                <img class="img-responsive" src="{{product_image_url($best->gambar1)}}" alt="product best seller" />
+                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'thumb')}}" alt="product best seller" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($best->nama, 25)}}</h5>
@@ -83,7 +83,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($products)}}">
-                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1))}}" alt="produk" />
+                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'thumb'))}}" alt="produk" />
                                             </a>
                                             @if(is_outstok($products))
                                             <div class="icon-info icon-sold">Sold</div>
@@ -120,7 +120,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($new)}}">
-                                                <img class="img-responsive" src="{{product_image_url($new->gambar1)}}" alt="new product" />
+                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'thumb')}}" alt="new product" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($new->nama, 25)}}</h5>

@@ -95,7 +95,7 @@
                             <div class="prod-container">
                                 <div class="image-container">
                                     <a href="{{product_url($produks)}}">
-                                        {{HTML::image(product_image_url($produks->gambar1), 'produk', array('class'=>'img-responsive','product'=>'height:263px; margin: 0 auto;'))}}
+                                        {{HTML::image(product_image_url($produks->gambar1,'medium'), 'produk', array('class'=>'img-responsive','product'=>'height:263px; margin: 0 auto;'))}}
                                     </a>
                                     @if(is_outstok($produks))
                                     <div class="icon-info icon-sold">Sold</div>
