@@ -30,7 +30,7 @@
                 	<div class="container">
                     	<div id="logo" class="fl">
                             @if(@getimagesize( url(logo_image_url()) ))
-                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Book Store', array('width'=>'auto', 'max-height'=>'140px'))}}</a>
+                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'max-height'=>'140px'))}}</a>
                             @else
                             <h2>
                                 <strong>

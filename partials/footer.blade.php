@@ -56,19 +56,7 @@
                                         @foreach($quickLink as $link_menu)
                                             @if($menu->id == $link_menu->tautanId)
                                             <li>
-                                            @if($link_menu->halaman == '1')
-                                                @if($link_menu->linkTo == 'halaman/about-us')
-                                                <a href="{{url(strtolower($link_menu->linkTo))}}">{{$link_menu->nama}}</a>
-                                                @else
-                                                <a href='{{url("halaman/".strtolower($link_menu->linkTo))}}'>{{$link_menu->nama}}</a>
-                                                @endif
-                                            @elseif($link_menu->halaman == '2')
-                                                <a href='{{url("blog/".strtolower($link_menu->linkTo))}}'>{{$link_menu->nama}}</a>
-                                            @elseif($link_menu->url == '1')
-                                                <a href="{{url(strtolower($link_menu->linkTo))}}">{{$link_menu->nama}}</a>
-                                            @else
-                                                <a href="{{url(strtolower($link_menu->linkTo))}}">{{$link_menu->nama}}</a>
-                                            @endif
+                                                <a href="{{menu_url($link_menu)}}">{{$link_menu->nama}}</a>
                                             </li>
                                             @endif
                                         @endforeach
@@ -81,10 +69,10 @@
                             <div id="contact-foot" class="col-xs-12 col-sm-3">
                             	<h4 class="title">Contact Info</h4>
                             	<div class="block-content">
-                                    <p><strong>{{$kontak->nama}}</strong></p>
+                                    <p><strong>{{ucwords($kontak->nama)}}</strong></p>
                                     <p>{{$kontak->alamat}}</p><br>
                                     @if(!empty($kontak->telepon))
-                                    <p><strong>Phone :</strong> {{$kontak->telepon}}<br>
+                                    <p><strong>Telpon :</strong> {{$kontak->telepon}}<br>
                                     @endif
                                     @if(!empty($kontak->hp))
                                     <strong>HP :</strong> {{$kontak->hp}}<br>

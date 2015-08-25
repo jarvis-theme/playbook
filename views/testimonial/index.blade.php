@@ -1,19 +1,3 @@
-@if(Session::has('msg'))
-<div class="success" id='message' style='display:none'>
-	<p>Terima kasih, testimonial anda sudah terkirim.</p>
-</div>
-@endif
-@if($errors->all())
-<div class="error" id='message' style='display:none'>
-	Terjadi kesalahan dalam menyimpan data.<br>
-	<ul>
-	@foreach($errors->all() as $message)
-		<li>{{ $message }}</li>
-	@endforeach
-	</ul>
-</div>
-@endif
-
 <!-- Page title -->
 <br>
 <section id="main-content">
@@ -63,7 +47,7 @@
                         <li>
                             <a href="{{product_url($bestproduk)}}">
                                 <div class="img-block">
-                                    {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
+                                    {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','style'=>'height:81px; margin: 0 auto;'))}}
                                 </div>
                                 <p class="product-name">{{short_description($bestproduk->nama,15)}}</p>
                                 @if(!empty($bestproduk->hargaCoret))

@@ -44,7 +44,7 @@
                         <li>
                             <a href="{{product_url($bestproduk)}}">
                                 <div class="img-block">
-                                    {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
+                                    {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','style'=>'height:81px; margin: 0 auto;'))}}
                                 </div>
                                 <p class="product-name">{{short_description($bestproduk->nama,15)}}</p>
                                 @if(!empty($bestproduk->hargaCoret))
@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div id="center_column" class="col-lg-9 col-xs-12 col-sm-8">
-                <div class="maps" >
+                <div class="maps" style="height:300px">
                     @if($kontak->lat!='0' || $kontak->lng!='0')
                     <iframe style="float:right;width:100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q={{ $kontak->lat.','.$kontak->lng }}&amp;aq=&amp;sll={{ $kontak->lat.','.$kontak->lng }}&amp;sspn=0.006849,0.009892&amp;ie=UTF8&amp;t=m&amp;z=14&amp;output=embed"></iframe><br />
                     @else
@@ -80,12 +80,13 @@
                     @endif
                 </div>
                 <div class="contact-us" >
+                    <br>
                     <div class="contact-desc">
                         @if(!empty($kontak->alamat))
-                        <strong>Shop Address :</strong> {{$kontak->alamat}}<br>
+                        <strong>Alamat Toko :</strong> {{$kontak->alamat}}<br>
                         @endif
                         @if(!empty($kontak->telepon))
-                        <strong>Phone :</strong> {{$kontak->telepon}}<br>
+                        <strong>Telepon :</strong> {{$kontak->telepon}}<br>
                         @endif
                         @if(!empty($kontak->hp))
                         <strong>HP :</strong> {{$kontak->hp}}<br>
@@ -101,13 +102,13 @@
                     <br><br>
                     <form class="contact-form" action="{{url('kontak')}}" method="post">
                         <p class="form-group">
-                            <input class="form-control" placeholder="Name" name="namaKontak" type="text" required>
+                            <input class="form-control" placeholder="Nama" name="namaKontak" type="text" required>
                         </p>
                         <p class="form-group">
-                            <input class="form-control" placeholder="Email Address" name="emailKontak" type="text" required>
+                            <input class="form-control" placeholder="Email" name="emailKontak" type="text" required>
                         </p>
                         <p class="form-group">
-                            <textarea class="form-control" placeholder="Message" name="messageKontak" required></textarea>
+                            <textarea class="form-control" placeholder="Pesan" name="messageKontak" required></textarea>
                         </p>
                         <button class="btn-send submitnewletter">Send</button>
                     </form>

@@ -39,16 +39,11 @@
                 <div id="latest-news" class="block">
                     <div class="title"><h2>Koleksi</h2></div>
                     <ul class="block-content">
-                        @foreach(list_koleksi() as $kol)
                         <li>
-                            <div class="col-sm-6 col-xs-6 img-block">
-                                <a href="{{koleksi_url($kol)}}">
-                                    {{ HTML::image(koleksi_image_url($kol->gambar,'thumb'),$kol->nama, array('class' => 'img-responsive' ))}}
-                                </a>
-                            </div>
-                            <a href="{{koleksi_url($kol)}}" class="col-sm-6 col-xs-6" style="margin: 15px 0;">{{$kol->nama}}</a>
+                            @foreach(list_koleksi() as $kol)
+                            <span style="text-decoration: underline;"><a href="{{koleksi_url($kol)}}">{{$kol->nama}}</a></span>&nbsp;&nbsp;
+                            @endforeach
                         </li>
-                        @endforeach
                     </ul>
                 </div>
                 <div id="adv-sidebar" class="block">
@@ -82,7 +77,7 @@
                                     <p>{{$produk->deskripsi}}</p>
                                 </div>
 
-                                @if($opsiproduk->count() > 0)                 
+                                @if($opsiproduk->count() > 0)
                                 <div class="size-list">
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">Opsi :</label>
@@ -91,7 +86,7 @@
                                                 <option value="">-- Pilih Opsi --</option>
                                                 @foreach ($opsiproduk as $key => $opsi)
                                                 <option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}} >
-                                                    {{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{jadiRupiah($opsi->harga)}}
+                                                    {{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}
                                                 </option>
                                                 @endforeach
                                             </select>
@@ -103,13 +98,12 @@
                                 <div class="quantity">
                                 	<div class="form-group">
                                     	<label class="control-label">Quantity :</label>
-                                        <div>
-                                            <input type="number" name="qty" class="text" value="1" />
-                                            <span class="clearfix"></span>
-                                        </div>
-                                     </div>
+                                        <button type='submit' class='qtyminus' field='qty' /><i class="fa fa-caret-left"></i></button>
+                                        <input type='text' name='qty' value='1' class='qty' />
+                                        <button type='button' value='+' class='qtyplus' field='qty' /><i class="fa fa-caret-right"></i></button>
+                                    </div>
                                 </div>
-                                <div class="avail-info">
+                                <div class="col-sm-12 avail-info">
                                     @if(!empty($produk->stok))
                                 	<span class="instock">Available, Stock <span class="ttl-stock">{{$produk->stok}} item</span></span>
                                     @else

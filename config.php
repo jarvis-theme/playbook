@@ -60,7 +60,7 @@ return array(
     'banner' => true,
     'themesColor' => array(
         'type'=> 'false',
-        'warnaDef'=>'main-color:#578400;background-slideshow:#d2cd69;background-footer:#436600;button-addtocart:#82c055;hover-button-addtocart:#6fa845s',
+        'warnaDef'=>'main-color: #578400;background-slideshow: #d2cd69;background-footer: #436600;button-addtocart: #82c055;hover-button-addtocart: #6fa845',
         'color'=>false
     ),
     'layout' => array(

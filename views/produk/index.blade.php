@@ -46,7 +46,7 @@
                     <li>
                     	<a href="{{product_url($bestproduk)}}">
                         	<div class="img-block">
-                            {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','product'=>'height:81px; margin: 0 auto;'))}}
+                            {{HTML::image(product_image_url($bestproduk->gambar1,'thumb'), 'produk', array('class'=>'img-responsive','style'=>'height:81px; margin: 0 auto;'))}}
                             </div>
                             <p class="product-name">{{short_description($bestproduk->nama,15)}}</p>
                             @if(!empty($bestproduk->hargaCoret))
@@ -66,14 +66,7 @@
                 <div class="title"><h2>Koleksi</h2></div>
                 <ul class="block-content">
                     @foreach(list_koleksi() as $kol)
-                    <li>
-                        <div class="col-sm-6 col-xs-6 img-block">
-                            <a href="{{koleksi_url($kol)}}">
-                                {{ HTML::image(koleksi_image_url($kol->gambar,'thumb'),$kol->nama, array('class' => 'img-responsive' ))}}
-                            </a>
-                        </div>
-                        <a href="{{koleksi_url($kol)}}" class="col-sm-6 col-xs-6" style="margin: 15px 0;">{{$kol->nama}}</a>
-                    </li>
+                    <span style="text-decoration: underline;"><a href="{{koleksi_url($kol)}}">{{$kol->nama}}</a></span>&nbsp;&nbsp;
                     @endforeach
                 </ul>
             </div>

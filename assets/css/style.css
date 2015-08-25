@@ -212,7 +212,7 @@ nav#menu .navbar-form button:hover {background:#f3906c; color:#fff}
 #left_sidebar .block li:last-child {margin:0 !important}
 #left_sidebar .block .img-block {text-align:center; max-width:100%; width:auto}
 #left_sidebar .block .img-block img {margin:0 auto}
-#left_sidebar #categories ul {margin:0; list-style:none}
+#left_sidebar #categories ul, #left_sidebar #koleksi ul {margin:0; list-style:none}
 #left_sidebar #categories ul li {border-bottom:1px solid #e9e9e9; position:relative}
 #left_sidebar #categories ul li:last-child {border:none}
 #left_sidebar #categories ul li a {
@@ -237,7 +237,6 @@ nav#menu .navbar-form button:hover {background:#f3906c; color:#fff}
 }
 #left_sidebar #categories ul li a:hover .arrow-right, #left_sidebar #categories ul li.active a .arrow-right {border-left-color:#75b628}
 
-#left_sidebar #best-seller {}
 #left_sidebar #best-seller li{overflow:hidden; margin-bottom:20px}
 #left_sidebar #best-seller li .img-block{float:left; margin-right:20px;}
 #left_sidebar #best-seller li p {margin:0}
@@ -246,7 +245,6 @@ nav#menu .navbar-form button:hover {background:#f3906c; color:#fff}
 #left_sidebar #best-seller .btn-more {border-top:1px solid #e8e8e8; padding:10px 0; margin:0 10px; text-align:right}
 #left_sidebar #best-seller .btn-more a {color:#3ead7f; font-size:13px; text-transform:uppercase; font-weight:400}
 
-#left_sidebar #latest-news {}
 #left_sidebar #latest-news .title {background:#ec1b1b; border-color:#b20d0d}
 #left_sidebar #latest-news li{font-size:14px; overflow:hidden; margin-bottom:30px}
 #left_sidebar #latest-news li img{margin-bottom:10px;}
@@ -254,6 +252,14 @@ nav#menu .navbar-form button:hover {background:#f3906c; color:#fff}
 #left_sidebar #latest-news li p {color:#000; margin-bottom:10px}
 #left_sidebar #latest-news li a.read-more {color:#70b4ee; font-style:italic; font-size:13px; text-decoration:underline; font-weight:300}
 #left_sidebar #latest-news li .date-post {display:block; font-size:12px; font-style:italic; color:#606060}
+
+#left_sidebar #koleksi li {
+	font-size: 14px;
+	overflow: hidden;
+	display: inline;
+	margin-right: 20px;
+	text-decoration: underline;
+}
 
 #left_sidebar #adv-sidebar{max-width:270px; margin:0 auto 30px }
 
@@ -566,7 +572,7 @@ input#qty {
 #prod-right .avail-info {
     color: #454444;
     font-size: 13px;
-    padding: 0 20px;
+    padding: 0px;
 	margin:27px 0 0;
 	float:left
 }
@@ -919,4 +925,46 @@ a.theme:hover {color:#000000;}
 .banks {display: inline;}
 @media only screen and (max-width: 480px) {
 	.banks {max-width: 45%;}
+}
+.qty {
+    background: -webkit-linear-gradient(top, white 0%, white 24%, #f7f7f7 77%, #f6f6f6 86%);
+    width: 52px;
+    border: none;
+    padding: 10px 0;
+    margin: 0 -5px;
+    border: 1px solid #e8e8e8;
+    outline: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    text-align: center; }
+.qtyminus {
+    background: -webkit-linear-gradient(top, white 0%, white 24%, #f7f7f7 77%, #f6f6f6 86%);
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #69ba09;
+    border: none;
+    border: 1px solid #e8e8e8;
+    outline: none;
+}
+.qtyminus:hover {
+    background: #e8e8e8;
+    transition: all 0.5s ease;
+}
+.qtyplus {
+    background: -webkit-linear-gradient(top, white 0%, white 24%, #f7f7f7 77%, #f6f6f6 86%);
+    background: #fff;
+    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #69ba09;
+    border: none;
+    margin: 0 -4px;
+    border: 1px solid #e8e8e8;
+    outline: none;
+}
+.qtyplus:hover {
+    background: #e8e8e8;
+    transition: all 0.5s ease;
 }

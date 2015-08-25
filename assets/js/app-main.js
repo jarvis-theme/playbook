@@ -2,6 +2,8 @@ var dirTema = document.querySelector('link[rel="playbook-theme"]').href;
 
 require.config({
 	baseUrl: '/',
+    urlArgs: "v=001",
+	waitSeconds: 1500,
 	shim: {
 		"bootstrap"	: {
 			deps: ['jquery'],
@@ -27,8 +29,10 @@ require.config({
 		"jq_flexslider" : {
 			deps : ['jquery'],
 		},
+		"navgoco" : {
+			deps : ['jquery'],
+		}
 	},
-	waitSeconds: 1500,
 
 	paths: {
 		// LIBRARY
@@ -36,11 +40,11 @@ require.config({
 		cart			: 'js/shop_cart',
 		jq_ui			: 'js/jquery-ui',
 		noty			: 'js/jquery.noty',
-		noty_util			: 'js/utils/noty',
+		noty_util		: 'js/utils/noty',
 		bootstrap		: dirTema+'/assets/js/bootstrap.min',
 		fancybox		: dirTema+'assets/js/jquery.fancybox.pack',
-		jq_flexslider		: dirTema+'assets/js/jquery.flexslider-min',
-		owl_carousel		: dirTema+'assets/js/owl.carousel.min',
+		jq_flexslider	: dirTema+'assets/js/jquery.flexslider-min',
+		owl_carousel	: dirTema+'assets/js/owl.carousel.min',
 		navgoco			: dirTema+'assets/js/jquery.navgoco.min',
 		
 		// ROUTE
@@ -50,15 +54,16 @@ require.config({
 		home            : dirTema+'assets/js/pages/home',
 		member          : dirTema+'assets/js/pages/member',
 		produk          : dirTema+'assets/js/pages/produk',
+		main	        : dirTema+'assets/js/pages/default',
 	}
 });
 require([
 	'jquery',
 	'router',
 	'cart',
-	'noty_util'
-
-], function($,router,cart,noty)
+	'noty_util',
+	'main',
+], function($,router,cart,noty,main)
 {
 	// PRODUK
 	router.define('/', 'home@run');
@@ -67,18 +72,5 @@ require([
 	router.run();
 	noty.run();
 	cart.run();
-
-	// PRELOADER
-	if ($('body').hasClass('hide')) {
-		$('.preloader').fadeOut(1000, function(){
-			setTimeout(function(){$('.preloader').remove(); },2000);
-			$('body').removeClass('hide');
-		});
-		$('body').removeClass('hide');
-	} else {
-		$('.preloader').fadeOut(1000, function(){
-			$('.preloader').remove();
-		});
-	}
-	
+	main.run();
 });
