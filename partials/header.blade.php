@@ -2,7 +2,6 @@
             	<div id="top-head">
                 	<div class="container">
                         @if( is_login() )
-                        
                         <div class="auth-block fr">
                             <ul>
                                 <li>{{HTML::link('logout', 'Logout')}}</li>
@@ -13,7 +12,6 @@
                             Welcome, <a href="{{url('member')}}" class="username"><strong>{{user()->nama}}</strong></a>
                         </div>
 
-                        
                         @else
                         <div class="auth-block fr">
                         	<ul>
@@ -30,7 +28,7 @@
                 	<div class="container">
                     	<div id="logo" class="fl">
                             @if(@getimagesize( url(logo_image_url()) ))
-                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'max-height'=>'140px'))}}</a>
+                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'style'=>'max-height:140px; max-width:100%;'))}}</a>
                             @else
                             <h2>
                                 <strong>

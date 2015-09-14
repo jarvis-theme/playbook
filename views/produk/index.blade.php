@@ -58,7 +58,7 @@
                     @endforeach
                 </ul>
                 <div class="btn-more">
-                    <a href="{{url('koleksi/best-seller')}}">view more</a>
+                    <a href="{{url('produk')}}">view more</a>
                 </div>
             </div>
             @endif
@@ -82,8 +82,8 @@
         	<div class="product-list">
             	<div class="row">
                     <ul class="grid">
-                    @if(count(list_product(null, @$category,@$collection)) > 0)
-                        @foreach(list_product(null, @$category) as $produks)
+                    @if(count(list_product(null, @$category, @$collection)) > 0)
+                        @foreach(list_product(null, @$category, @$collection) as $produks)
                         <li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                             <div class="prod-container">
                                 <div class="image-container">

@@ -2,7 +2,6 @@
 	<div class="breadcrumb"><p>Register</p></div>
 	<div class="inner-column row">
         <div class="col-lg-3 col-xs-12 col-sm-4 pull-right">
-          
         </div>
         <div id="center_column" class="col-lg-7 col-xs-12 col-sm-8">
             {{Form::open(array('url'=>'member','method'=>'post','class'=>'form-horizontal'))}}

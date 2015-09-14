@@ -16,6 +16,7 @@ define(['jquery','jq_flexslider','owl_carousel'], function($)
 			// SLIDER PRODUCT HOME
 			$('#trending-home #slide_product').owlCarousel({
 				itemsCustom : [
+					[120, 1],
 					[350, 1],
 					[450, 2],
 					[600, 3],
@@ -26,10 +27,12 @@ define(['jquery','jq_flexslider','owl_carousel'], function($)
 				],
 				navigation : true,
 				pagination: false,
-				navigationText: false
+				navigationText: false,
+				directionNav: false,
 			});
 			$('#best-seller-home #slide_product').owlCarousel({
 				itemsCustom : [
+					[120, 1],
 					[350, 1],
 					[450, 2],
 					[600, 3],
@@ -58,6 +61,7 @@ define(['jquery','jq_flexslider','owl_carousel'], function($)
 			});
 			$('#new-arrivals #slide_product').owlCarousel({
 				itemsCustom : [
+					[120, 1],
 					[350, 1],
 					[450, 2],
 					[600, 3],

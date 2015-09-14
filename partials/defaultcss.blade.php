@@ -1,7 +1,6 @@
-   
         {{generate_theme_css('playbook/assets/css/reset.css')}}
-        {{generate_theme_css('playbook/assets/css/bootstrap.css')}}
-        {{generate_theme_css('playbook/assets/css/font-awesome.min.css')}}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
         @if($tema->isiCss=='')  
         {{generate_theme_css('playbook/assets/css/style.css')}}
         @else   

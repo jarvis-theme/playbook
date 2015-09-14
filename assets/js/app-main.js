@@ -1,8 +1,8 @@
-var dirTema = document.querySelector('link[rel="playbook-theme"]').href;
+var dirTema = document.querySelector("meta[name='theme_path']").getAttribute('content');
 
 require.config({
 	baseUrl: '/',
-    urlArgs: "v=001",
+    urlArgs: "v=002",
 	waitSeconds: 1500,
 	shim: {
 		"bootstrap"	: {
@@ -36,25 +36,25 @@ require.config({
 
 	paths: {
 		// LIBRARY
-		jquery 			: ['//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',dirTema+'assets/js/jquery.min'],
+		jquery 			: '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min',
 		cart			: 'js/shop_cart',
 		jq_ui			: 'js/jquery-ui',
 		noty			: 'js/jquery.noty',
 		noty_util		: 'js/utils/noty',
-		bootstrap		: dirTema+'/assets/js/bootstrap.min',
-		fancybox		: dirTema+'assets/js/jquery.fancybox.pack',
-		jq_flexslider	: dirTema+'assets/js/jquery.flexslider-min',
-		owl_carousel	: dirTema+'assets/js/owl.carousel.min',
-		navgoco			: dirTema+'assets/js/jquery.navgoco.min',
+		bootstrap		: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min',
+		fancybox		: dirTema+'/assets/js/jquery.fancybox.pack',
+		jq_flexslider	: dirTema+'/assets/js/jquery.flexslider-min',
+		owl_carousel	: dirTema+'/assets/js/owl.carousel.min',
+		navgoco			: dirTema+'/assets/js/jquery.navgoco.min',
 		
 		// ROUTE
 		router          : 'js/router',
 
 		// CONTROLLER
-		home            : dirTema+'assets/js/pages/home',
-		member          : dirTema+'assets/js/pages/member',
-		produk          : dirTema+'assets/js/pages/produk',
-		main	        : dirTema+'assets/js/pages/default',
+		home            : dirTema+'/assets/js/pages/home',
+		member          : dirTema+'/assets/js/pages/member',
+		produk          : dirTema+'/assets/js/pages/produk',
+		main	        : dirTema+'/assets/js/pages/default',
 	}
 });
 require([

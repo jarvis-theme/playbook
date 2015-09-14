@@ -58,7 +58,7 @@
                         </li>
                         @endforeach
                     </ul>
-                    <div class="btn-more"><a href="{{url('koleksi/best-seller')}}">view more</a></div>
+                    <div class="btn-more"><a href="{{url('produk')}}">view more</a></div>
                 </div>
                 @endif
                 <div id="latest-news" class="block">

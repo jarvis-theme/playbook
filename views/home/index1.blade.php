@@ -44,7 +44,7 @@
                 <div id="trending-home" class="product_home">
                     <div class="block-title">
                         <h2 class="fl">Best <strong>Seller</strong></h2>
-                        <a class="view-shop fr" href="{{url('koleksi/best-seller')}}"><span>Lihat Produk</span></a>
+                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
@@ -55,7 +55,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($best)}}">
-                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'thumb')}}" alt="product best seller" />
+                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'medium')}}" alt="product best seller" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($best->nama, 25)}}</h5>
@@ -83,7 +83,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($products)}}">
-                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'thumb'))}}" alt="produk" />
+                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'medium'))}}" alt="produk" />
                                             </a>
                                             @if(is_outstok($products))
                                             <div class="icon-info icon-sold">Sold</div>
@@ -120,7 +120,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($new)}}">
-                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'thumb')}}" alt="new product" />
+                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'medium')}}" alt="new product" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($new->nama, 25)}}</h5>

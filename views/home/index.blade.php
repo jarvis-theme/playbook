@@ -35,14 +35,14 @@
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
-                        <div class="row">
+                        <div class="row col-xs-12">
                             <ul id="slide_product" class="grid owl-carousel owl-theme">
                                 @foreach(list_product() as $products)
                                 <li class="item">
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($products)}}">
-                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'medium'))}}" alt="produk" />
+                                                <img class="img-responsive" src="{{product_image_url($products->gambar1,'medium')}}" alt="produk" />
                                             </a>
                                             @if(is_outstok($products))
                                             <div class="icon-info icon-sold">Sold</div>
@@ -72,7 +72,7 @@
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
-                        <div class="row">
+                        <div class="row col-xs-12">
                             <ul id="slide_product" class="grid owl-carousel owl-theme">
                                 @foreach(new_product() as $new)
                                 <li class="item">
@@ -93,7 +93,6 @@
                         </div><!--.row-->
                     </div><!--.product_list-->
                 </div><!--#new-arrivals-->
-                
             </div> <!--.center_column-->
         </div><!--.inner-column-->  
     </div>

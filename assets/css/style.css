@@ -527,7 +527,7 @@ background-image: url("../images/pag-right.png");
 #prod-right .desc-prod {font-weight:300; margin-bottom:10px}
 #prod-right .desc-prod p {color:#787878;}
 #prod-right .desc-prod p.title {color:#282828; margin-bottom:5px; text-transform:uppercase; font-weight:400}
-#prod-right .quantity {float:left; margin-right:10px;}
+#prod-right .quantity {margin-right:10px;}
 .quantity .qty-block {
 	background: url("../images/bg-qty.png") repeat-x;
     border: 1px solid #b3b3b3;
@@ -794,7 +794,7 @@ footer .copyright p {margin:0}
 	#bg-slider .container{padding-bottom:20px;}
 	.top-list h2.title {float:none; display:block; text-align:center; width:auto}
 	.top-list .btn-thumb {float:none; text-align:center}
-	.big-image img, .btm-details img {width:100%; height:auto}
+	.big-image img, .btm-details img {height:auto}
 	.btm-details img {margin-bottom:20px}
 	.product_home .block-title h2 {float:none}
 	.product_home .view-shop {float:none; display:inline-block}
@@ -925,6 +925,12 @@ a.theme:hover {color:#000000;}
 .banks {display: inline;}
 @media only screen and (max-width: 480px) {
 	.banks {max-width: 45%;}
+	.owl-theme .owl-controls .owl-buttons div.owl-prev {
+	    left: 10px !important;
+	}
+	.owl-theme .owl-controls .owl-buttons div.owl-next {
+	    right: 10px !important;
+	}	
 }
 .qty {
     background: -webkit-linear-gradient(top, white 0%, white 24%, #f7f7f7 77%, #f6f6f6 86%);
@@ -968,3 +974,5 @@ a.theme:hover {color:#000000;}
     background: #e8e8e8;
     transition: all 0.5s ease;
 }
+.attribute_select{ margin-bottom: 10px; }
+td.desc ul { list-style-type: circle; list-style-position: inside; }

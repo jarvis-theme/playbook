@@ -41,6 +41,7 @@
 	    <div class="col-lg-3 col-xs-12">
 	    	@foreach(vertical_banner() as $banners)
 	    	{{HTML::image(banner_image_url($banners->gambar))}}
+	    	<br>
 	    	@endforeach
 	    </div>
     </div>

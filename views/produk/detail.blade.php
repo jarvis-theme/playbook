@@ -80,8 +80,8 @@
                                 @if($opsiproduk->count() > 0)
                                 <div class="size-list">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">Opsi :</label>
-                                        <div class="col-sm-5">
+                                        <label class="col-xs-5 col-sm-4 control-label">Opsi :</label>
+                                        <div class="col-xs-7 col-sm-5">
                                             <select class="form-control attribute_select" name="opsiproduk">
                                                 <option value="">-- Pilih Opsi --</option>
                                                 @foreach ($opsiproduk as $key => $opsi)
@@ -93,14 +93,17 @@
                                         </div>
                                     </div>
                                 </div>
+                                <br>
                                 @endif
 
                                 <div class="quantity">
                                 	<div class="form-group">
-                                    	<label class="control-label">Quantity :</label>
-                                        <button type='submit' class='qtyminus' field='qty' /><i class="fa fa-caret-left"></i></button>
-                                        <input type='text' name='qty' value='1' class='qty' />
-                                        <button type='button' value='+' class='qtyplus' field='qty' /><i class="fa fa-caret-right"></i></button>
+                                    	<label class="col-xs-5 col-sm-4 control-label">Quantity :</label>
+                                        <div class="col-xs-7 col-sm-8">
+                                            <button type='submit' class='qtyminus' field='qty' /><i class="fa fa-caret-left"></i></button>
+                                            <input type='text' name='qty' value='1' class='qty' />
+                                            <button type='button' value='+' class='qtyplus' field='qty' /><i class="fa fa-caret-right"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 avail-info">
@@ -158,11 +161,11 @@
                         <div class="btm-details">
                         	<div class="bank-logo fl">
                                 @foreach(list_banks() as $value)
-                                <img class="banks img-responsive" src="{{bank_logo($value)}}" />
+                                <img class="banks" src="{{bank_logo($value)}}" />
                                 @endforeach
                             </div>
                             <div class="button-detail fr">
-                                <button class="btn addtocart" type="submit"><i class="cart"></i>Add to cart</button>
+                                <button class="btn addtocart" type="submit"><i class="cart"></i>Beli</button>
                             </div>
                             <div class="clr"></div>
                         </div>
@@ -171,7 +174,7 @@
 
                 @if(count(other_product($produk, 4)) > 0)
                 <div id="related-product" class="product-list">
-                    <h2 class="title">Related Product</h2>
+                    <h2 class="title">Produk Lainnya</h2>
                     <div class="row">
                         <ul class="grid">
                             @foreach(other_product($produk, 4) as $relproduk)
