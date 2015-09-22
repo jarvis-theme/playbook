@@ -785,6 +785,20 @@ footer .copyright p {margin:0}
 	nav#menu ul.navbar-nav > li > .dropdown-menu li:last-child {border-bottom:none}
 	nav#menu ul.navbar-nav > li > .dropdown-menu li a {font-size:14px;}
 	.product_home {padding: 0px;}
+
+	.navbar-header { float: none; }
+    .navbar-toggle { display: block; }
+    .navbar-fixed-top .navbar-collapse, 
+    .navbar-static-top .navbar-collapse, 
+    .navbar-fixed-bottom .navbar-collapse {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .navbar-collapse.collapse { display: none !important; }
+    .navbar-collapse.collapse.in { 
+        display: block!important; 
+        margin-top: 0px;
+    }
 }
 
 @media screen and (max-width: 640px) {

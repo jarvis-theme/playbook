@@ -23,7 +23,7 @@
             	<div class="top-footer">
                 	<div class="container">
                     	<div class="row">
-                            <div id="about-foot" class="col-xs-12 col-sm-4">
+                            <div id="about-foot" class="col-xs-12 col-sm-3 col-lg-4">
                             	<h4 class="title">About Us</h4>
                             	<div class="block-content">
                                     <p>{{short_description(about_us()->isi,400)}}</p>
@@ -32,7 +32,7 @@
 
                             @foreach($tautan as $key=>$menu)
                                 @if($key == '1' || $key == '2')
-                                <div id="links-foot" class="col-xs-12 col-sm-2">
+                                <div id="links-foot" class="col-xs-12 col-sm-3 col-lg-2">
                                     <h4 class="title">{{$menu->nama}}</h4>
                                     <div class="block-content">
                                         <ul>
@@ -49,7 +49,7 @@
                                 @endif
                             @endforeach  
 
-                            <div id="contact-foot" class="col-xs-12 col-sm-3">
+                            <div id="contact-foot" class="col-xs-12 col-sm-3 col-lg-3">
                             	<h4 class="title">Contact Info</h4>
                             	<div class="block-content">
                                     <p><strong>{{ucwords($kontak->nama)}}</strong></p>
