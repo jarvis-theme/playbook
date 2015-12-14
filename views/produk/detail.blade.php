@@ -1,7 +1,10 @@
 	<div class="container">
     	<div class="breadcrumb"><p>Detail Produk</p></div>
     	<div class="inner-column row">
-            <div id="left_sidebar" class="col-lg-3 col-xs-12 col-sm-4">
+            <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
+                <div class="powerup">
+                    {{pluginSidePowerup()}}
+                </div>
                 <div id="categories" class="block sidey">
                     <div class="title"><h2>Kategori</h2></div>
                 	<ul class="block-content nav">
@@ -10,13 +13,13 @@
                             <li>
                                 <a href="{{category_url($side_menu)}}">{{$side_menu->nama}}</a>
                                 @if($side_menu->anak->count() != 0)
-                                <ul style="padding: 0px 20px;">
+                                <ul class="sidekategori">
                                     @foreach($side_menu->anak as $submenu)
                                     @if($submenu->parent == $side_menu->id)
                                     <li>
-                                        <a href="{{category_url($submenu)}}" style="background-color:transparent">{{$submenu->nama}}</a>
+                                        <a href="{{category_url($submenu)}}" class="transparent">{{$submenu->nama}}</a>
                                         @if($submenu->anak->count() != 0)
-                                        <ul style="padding: 0px 20px;">
+                                        <ul class="sidekategori">
                                             @foreach($submenu->anak as $submenu2)
                                             @if($submenu2->parent == $submenu->id)
                                             <li>
@@ -41,7 +44,7 @@
                     <ul class="block-content">
                         <li>
                             @foreach(list_koleksi() as $kol)
-                            <span style="text-decoration: underline;"><a href="{{koleksi_url($kol)}}">{{$kol->nama}}</a></span>&nbsp;&nbsp;
+                            <span class="underline"><a href="{{koleksi_url($kol)}}">{{$kol->nama}}</a></span>&nbsp;&nbsp;
                             @endforeach
                         </li>
                     </ul>
@@ -49,22 +52,22 @@
                 <div id="adv-sidebar" class="block">
                     @foreach(vertical_banner() as $banners)
                     <a href="{{url($banners->url)}}">
-                        {{HTML::image(banner_image_url($banners->gambar),'banner',array('width'=>'270','height'=>'388','class'=>'img-responsive'))}}
+                        {{HTML::image(banner_image_url($banners->gambar),'Info Promo',array('width'=>'270','height'=>'388','class'=>'img-responsive'))}}
                     </a>
                     @endforeach
                 </div>
-            </div><!--#left_sidebar-->
-            <div id="center_column" class="col-lg-9 col-xs-12 col-sm-8">
+            </div>
+            <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
             	<div class="product-details">
                     <form action="#" id="addorder">
                     	<div class="row">
-                        	<div id="prod-left" class="col-lg-6 col-xs-12 col-sm-6">
+                        	<div id="prod-left" class="col-xs-12 col-sm-6 col-lg-6">
                             	<div class="big-image">
-                                    {{HTML::image(product_image_url($produk->gambar1,'medium'),'produk')}}
-                                    <a class="zoom fancybox" href="{{product_image_url($produk->gambar1)}}" title="{{$produk->nama}}">&nbsp;</a>
+                                    {{HTML::image(product_image_url($produk->gambar1,'medium'), $produk->nama)}}
+                                    <a class="zoom fancybox" href="{{product_image_url($produk->gambar1,'large')}}" title="{{$produk->nama}}">&nbsp;</a>
                                 </div>
                             </div>
-                            <div id="prod-right" class="col-lg-6 col-xs-12 col-sm-6">
+                            <div id="prod-right" class="col-xs-12 col-sm-6 col-lg-6">
                             	<h2 class="name-title">{{$produk->nama}}</h2>
                                 @if(!empty($produk->hargaCoret))
                                 <h3 class="author"><del>{{price($produk->hargaCoret)}}</del></h3>
@@ -98,7 +101,7 @@
 
                                 <div class="quantity">
                                 	<div class="form-group">
-                                    	<label class="col-xs-5 col-sm-4 control-label">Quantity :</label>
+                                    	<label class="col-xs-5 col-sm-4 control-label">Jumlah :</label>
                                         <div class="col-xs-7 col-sm-8">
                                             <button type='submit' class='qtyminus' field='qty' /><i class="fa fa-caret-left"></i></button>
                                             <input type='text' name='qty' value='1' class='qty' />
@@ -108,10 +111,10 @@
                                 </div>
                                 <div class="col-sm-12 avail-info">
                                     @if(!empty($produk->stok))
-                                	<span class="instock">Available, Stock <span class="ttl-stock">{{$produk->stok}} item</span></span>
+                                	<span class="instock">Stok tersedia <span class="ttl-stock">{{$produk->stok}} item</span></span>
                                     @else
                                     <span class="fa-stack fa-1x">
-                                        <i style="color: #d9534f;" class="fa fa-circle fa-stack-2x"></i>
+                                        <i id="emptystok" class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-close fa-stack-1x fa-inverse"></i>
                                     </span>
                                     Out of Stock
@@ -125,8 +128,8 @@
                                                     @if($produk->gambar2!='')
                                                 	<li class="item col-xs-4">
                                                         <div class="img-container">
-                                                            <a class="fancybox" href="{{product_image_url($produk->gambar2)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar2,'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                            <a class="fancybox" href="{{product_image_url($produk->gambar2, 'large')}}" title="{{$produk->nama}}">
+                                                                {{HTML::image(product_image_url($produk->gambar2,'thumb'),'Thumbnail 1',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -134,8 +137,8 @@
                                                     @if($produk->gambar3!='')
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
-                                                            <a class="fancybox" href="{{product_image_url($produk->gambar3)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar3.'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                            <a class="fancybox" href="{{product_image_url($produk->gambar3,'large')}}" title="{{$produk->nama}}">
+                                                                {{HTML::image(product_image_url($produk->gambar3,'thumb'),'Thumbnail 2',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -143,8 +146,8 @@
                                                     @if($produk->gambar4!='')
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
-                                                            <a class="fancybox" href="{{product_image_url($produk->gambar4)}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar4,'thumb'),'produk',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                            <a class="fancybox" href="{{product_image_url($produk->gambar4,'large')}}" title="{{$produk->nama}}">
+                                                                {{HTML::image(product_image_url($produk->gambar4,'thumb'),'Thumbnail 3',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
                                                             </a>
                                                         </div>
                                                     </li>
@@ -156,21 +159,16 @@
                                 </div>
                             </div>
                             <div class="clr"></div>
-                        </div><!--.row-->
+                        </div>
 
                         <div class="btm-details">
-                        	<div class="bank-logo fl">
-                                @foreach(list_banks() as $value)
-                                <img class="banks" src="{{bank_logo($value)}}" />
-                                @endforeach
-                            </div>
                             <div class="button-detail fr">
                                 <button class="btn addtocart" type="submit"><i class="cart"></i>Beli</button>
                             </div>
                             <div class="clr"></div>
                         </div>
                     </form>
-                </div><!--.product-details-->
+                </div>
 
                 @if(count(other_product($produk, 4)) > 0)
                 <div id="related-product" class="product-list">
@@ -182,16 +180,14 @@
                                 <div class="prod-container">
                                     <div class="image-container">
                                         <a href="{{product_url($relproduk)}}">
-                                            {{HTML::image(product_image_url($relproduk->gambar1,'medium'),'produk',array('class'=>'img-responsive'))}}
+                                            {{HTML::image(product_image_url($relproduk->gambar1,'medium'),$relproduk->nama,array('class'=>'img-responsive'))}}
                                         </a>
                                         @if(is_outstok($relproduk))
                                         <div class="icon-info icon-sold">Sold</div>
-                                        @else
-                                            @if(is_terlaris($relproduk))
-                                            <div class="icon-info icon-sale">Hot Item</div>
-                                            @elseif(is_produkbaru($relproduk))
-                                            <div class="icon-info icon-new">New</div>
-                                            @endif
+                                        @elseif(is_terlaris($relproduk))
+                                        <div class="icon-info icon-sale">Hot Item</div>
+                                        @elseif(is_produkbaru($relproduk))
+                                        <div class="icon-info icon-new">New</div>
                                         @endif
                                     </div>
                                     <h5 class="product-name">{{$relproduk->nama}}</h5>
@@ -206,10 +202,10 @@
                         </ul>
                     </div>
                     <hr>
-                </div><!--.product-list-->
+                </div>
                 @endif
 
                 {{pluginTrustklik()}}
-            </div> <!--.center_column-->
-        </div><!--.inner-column-->	
+            </div>
+        </div>
     </div>

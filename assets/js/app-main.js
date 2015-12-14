@@ -2,17 +2,14 @@ var dirTema = document.querySelector("meta[name='theme_path']").getAttribute('co
 
 require.config({
 	baseUrl: '/',
-    urlArgs: "v=002",
-	waitSeconds: 1500,
+    urlArgs: "v=004",
+	waitSeconds: 30,
 	shim: {
 		"bootstrap"	: {
 			deps: ['jquery'],
 		},
 		'jq_ui' : {
 			deps : ['jquery'],
-		},
-		"noty_util" : {
-			deps : ['jquery','noty'],
 		},
 		"noty" : {
 			deps : ['jquery'],
@@ -40,11 +37,11 @@ require.config({
 		cart			: 'js/shop_cart',
 		jq_ui			: 'js/jquery-ui',
 		noty			: 'js/jquery.noty',
-		noty_util		: 'js/utils/noty',
 		bootstrap		: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min',
 		fancybox		: dirTema+'/assets/js/jquery.fancybox.pack',
 		jq_flexslider	: dirTema+'/assets/js/jquery.flexslider-min',
 		owl_carousel	: dirTema+'/assets/js/owl.carousel.min',
+		modernizr		: dirTema+'/assets/js/modernizr.custom.28468',
 		navgoco			: dirTema+'/assets/js/jquery.navgoco.min',
 		
 		// ROUTE
@@ -61,16 +58,15 @@ require([
 	'jquery',
 	'router',
 	'cart',
-	'noty_util',
 	'main',
-], function($,router,cart,noty,main)
+	'modernizr'
+], function($,router,cart,main)
 {
 	// PRODUK
 	router.define('/', 'home@run');
 	router.define('home', 'home@run');
 	router.define('produk/*', 'produk@run');
 	router.run();
-	noty.run();
 	cart.run();
 	main.run();
 });

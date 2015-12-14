@@ -1,11 +1,10 @@
 <div class="container">
 	<div class="inner-column row">
         <div id="center_column" class="col-lg-9 col-xs-12">
-    		<p>Kamu bisa menggati password lama kamu dengan yang baru melalui halaman ini.</p>
+    		<p>Kamu bisa mengganti password lama kamu dengan yang baru melalui halaman ini.</p>
 			<br>
 			<h2>Reset Password</h2>
-			<hr>
-			<br>
+			<hr><br>
             <form class="form-horizontal" action="{{url('member/recovery/'.$id.'/'.$code)}}" method="post">
 				<div class="form-group">
 			    	<label for="inputPassword3" class="col-sm-2">Password</label>
@@ -33,7 +32,7 @@
 	    </div>
 	    <div class="col-lg-3 col-xs-12">
 	    	@foreach(vertical_banner() as $banners)
-	    	{{HTML::image(banner_image_url($banners->gambar))}}
+	    	{{HTML::image(banner_image_url($banners->gambar), 'Info Promo')}}
 	    	<br>
 	    	@endforeach
 	    </div>

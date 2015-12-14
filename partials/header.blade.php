@@ -7,7 +7,6 @@
                                 <li>{{HTML::link('logout', 'Logout')}}</li>
                             </ul>
                         </div>
-
                         <div class="user-info fr">
                             Welcome, <a href="{{url('member')}}" class="username"><strong>{{user()->nama}}</strong></a>
                         </div>
@@ -22,17 +21,17 @@
                         @endif
                         <div class="clr"></div>
                     </div>
-                </div> <!--.top-head-->
+                </div>
 
                 <div id="center-header">
                 	<div class="container">
                     	<div id="logo" class="fl">
                             @if(@getimagesize( url(logo_image_url()) ))
-                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'style'=>'max-height:140px; max-width:100%;'))}}</a>
+                            <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'class'=>'logos'))}}</a>
                             @else
                             <h2>
                                 <strong>
-                                    <a href="{{url('home')}}" style="color:#578400">{{ short_description(Theme::place('title'),50) }}</a>
+                                    <a href="{{url('home')}}" class="logotext">{{ short_description(Theme::place('title'),50) }}</a>
                                 </strong>
                             </h2>
                             @endif
@@ -43,7 +42,7 @@
                         <div id="search-top" class="fr">
                         	<form class="navbar-form" role="search" action="{{url('search')}}"  method="post">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="search" required>
+                                    <input type="text" class="form-control" placeholder="Cari Produk" name="search" required>
                                     <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit">Search</button>
                                     </div>
@@ -54,7 +53,6 @@
                         <div class="clr"></div>
                     </div>
                 </div>
-                <!-- MENU - START -->
                 <nav id="menu" class="navbar navbar-default" role="navigation">
                 	<div class="container">
                         <div class="navbar-header">
@@ -75,6 +73,5 @@
                         </div>
                 	</div>
                 </nav>
-                <!-- MENU - END -->
                 <div class="clr"></div>
 			</header>

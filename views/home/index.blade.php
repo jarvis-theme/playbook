@@ -1,9 +1,9 @@
     <div class="container">
         <div class="inner-column row">
-            <div id="center_column" class="col-lg-12 col-xs-12 col-sm-12">
+            <div id="center_column" class="col-xs-12 col-sm-12 col-lg-12">
                 <div id="trending-home" class="product_home">
                     <div class="block-title">
-                        <h2 class="fl">Best <strong>Seller</strong></h2>
+                        <h2 class="fl">Produk <strong>Terlaris</strong></h2>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
@@ -14,7 +14,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($best)}}">
-                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'medium')}}" alt="product best seller" />
+                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'medium')}}" alt="{{$best->nama}}" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($best->nama, 25)}}</h5>
@@ -25,50 +25,48 @@
                                 @endforeach
                             </ul>
                             <div class="clr"></div>
-                        </div><!--.row-->
-                    </div><!--.product_list-->
-                </div><!--#trending-home-->
+                        </div>
+                    </div>
+                </div>
                 <div id="best-seller-home" class="product_home">
                     <div class="block-title">
                         <h2 class="fl"><strong>Produk</strong> Kami</h2>
-                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Semua Produk</span></a>
+                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
                         <div class="row col-xs-12">
                             <ul id="slide_product" class="grid owl-carousel owl-theme">
-                                @foreach(list_product() as $products)
+                                @foreach(home_product() as $products)
                                 <li class="item">
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($products)}}">
-                                                <img class="img-responsive" src="{{product_image_url($products->gambar1,'medium')}}" alt="produk" />
+                                                <img class="img-responsive" src="{{product_image_url($products->gambar1,'medium')}}" alt="{{$products->nama}}" />
                                             </a>
                                             @if(is_outstok($products))
                                             <div class="icon-info icon-sold">Sold</div>
-                                            @else
-                                                @if(is_terlaris($products))
-                                                <div class="icon-info icon-sale">Hot Item</div>
-                                                @elseif(is_produkbaru($products))
-                                                <div class="icon-info icon-new">New</div>
-                                                @endif
+                                            @elseif(is_terlaris($products))
+                                            <div class="icon-info icon-sale">Hot Item</div>
+                                            @elseif(is_produkbaru($products))
+                                            <div class="icon-info icon-new">New</div>
                                             @endif
                                         </div>
                                         <h5 class="product-name">{{short_description($products->nama,25)}}</h5>
                                         <span class="price">{{price($products->hargaJual)}}</span>
                                         <a href="{{product_url($products)}}" class="buy-btn">Detail</a>
-                                     </div>
+                                    </div>
                                 </li>
                                 @endforeach
                             </ul>
                             <div class="clr"></div>
-                        </div><!--.row-->
-                    </div><!--.product_list-->
-                </div><!--#best-seller-home-->
+                        </div>
+                    </div>
+                </div>
                 <div id="new-arrivals" class="product_home">
                     <div class="block-title">
-                        <h2 class="fl">New <strong>Arrivals</strong></h2>
-                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Semua Produk</span></a>
+                        <h2 class="fl">Produk <strong>Terbaru</strong></h2>
+                        <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
@@ -79,7 +77,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($new)}}">
-                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'medium')}}" alt="new product" />
+                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'medium')}}" alt="{{$new->nama}}" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($new->nama, 25)}}</h5>
@@ -90,9 +88,9 @@
                                 @endforeach
                             </ul>
                             <div class="clr"></div>
-                        </div><!--.row-->
-                    </div><!--.product_list-->
-                </div><!--#new-arrivals-->
-            </div> <!--.center_column-->
-        </div><!--.inner-column-->  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>

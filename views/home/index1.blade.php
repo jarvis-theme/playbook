@@ -1,8 +1,7 @@
     <div class="container">
         <div class="inner-column row">
-            <!-- Sidebar -->
-            <div id="left_sidebar" class="col-lg-3 col-xs-12 col-sm-4">
-                <div class="sidebar-items">
+            <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
+                <div class="powerup sidebar-items">
                     {{pluginSidePowerup()}}
                 </div>
                 <div id="categories" class="block sidey">
@@ -13,13 +12,13 @@
                             <li>
                                 <a href="{{category_url($side_menu)}}">{{$side_menu->nama}}</a>
                                 @if($side_menu->anak->count() != 0)
-                                <ul style="padding: 0px 20px;">
+                                <ul class="sidekategori">
                                     @foreach($side_menu->anak as $submenu)
                                     @if($submenu->parent == $side_menu->id)
                                     <li>
-                                        <a href="{{category_url($submenu)}}" style="background-color:transparent">{{$submenu->nama}}</a>
+                                        <a href="{{category_url($submenu)}}" class="transparent">{{$submenu->nama}}</a>
                                         @if($submenu->anak->count() != 0)
-                                        <ul style="padding: 0px 20px;">
+                                        <ul class="sidekategori">
                                             @foreach($submenu->anak as $submenu2)
                                             @if($submenu2->parent == $submenu->id)
                                             <li>
@@ -40,10 +39,10 @@
                     </ul>
                 </div>
             </div>
-            <div id="center_column" class="col-lg-9 col-xs-12 col-sm-8">
+            <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
                 <div id="trending-home" class="product_home">
                     <div class="block-title">
-                        <h2 class="fl">Best <strong>Seller</strong></h2>
+                        <h2 class="fl">Produk <strong>Terlaris</strong></h2>
                         <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
@@ -55,7 +54,7 @@
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($best)}}">
-                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'medium')}}" alt="product best seller" />
+                                                <img class="img-responsive" src="{{product_image_url($best->gambar1,'medium')}}" alt="{{$best->nama}}" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($best->nama, 25)}}</h5>
@@ -78,21 +77,19 @@
                     <div class="product-list">
                         <div class="row">
                             <ul class="grid">
-                                @foreach(list_product(4) as $products)
+                                @foreach(home_product() as $products)
                                 <li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($products)}}">
-                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'medium'))}}" alt="produk" />
+                                                <img class="img-responsive" src="{{url(product_image_url($products->gambar1,'medium'))}}" alt="{{$products->nama}}" />
                                             </a>
                                             @if(is_outstok($products))
                                             <div class="icon-info icon-sold">Sold</div>
-                                            @else
-                                                @if(is_terlaris($products))
-                                                <div class="icon-info icon-sale">Hot Item</div>
-                                                @elseif(is_produkbaru($products))
-                                                <div class="icon-info icon-new">New</div>
-                                                @endif
+                                            @elseif(is_terlaris($products))
+                                            <div class="icon-info icon-sale">Hot Item</div>
+                                            @elseif(is_produkbaru($products))
+                                            <div class="icon-info icon-new">New</div>
                                             @endif
                                         </div>
                                         <h5 class="product-name">{{short_description($products->nama,25)}}</h5>
@@ -108,19 +105,19 @@
                 </div>
                 <div id="new-arrivals" class="product_home">
                     <div class="block-title">
-                        <h2 class="fl">New <strong>Arrivals</strong></h2>
+                        <h2 class="fl">Produk <strong>Terbaru</strong></h2>
                         <a class="view-shop fr" href="{{url('produk')}}"><span>Lihat Produk</span></a>
                         <div class="clr"></div>
                     </div>
                     <div class="product-list">
                         <div class="row">
                             <ul class="grid">
-                                @foreach(new_product(4) as $new)
+                                @foreach(new_product(8) as $new)
                                 <li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                                     <div class="prod-container">
                                         <div class="image-container">
                                             <a href="{{product_url($new)}}">
-                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'medium')}}" alt="new product" />
+                                                <img class="img-responsive" src="{{product_image_url($new->gambar1,'medium')}}" alt="{{$new->nama}}" />
                                             </a>
                                         </div>
                                         <h5 class="product-name">{{short_description($new->nama, 25)}}</h5>
@@ -134,6 +131,6 @@
                         </div>
                     </div>
                 </div>
-            </div> <!--.center_column-->
-        </div><!--.inner-column-->  
+            </div>
+        </div>
     </div>

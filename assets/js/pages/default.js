@@ -4,7 +4,7 @@ define(['jquery','navgoco','bootstrap'], function($,navgoco)
 		var self = this;
 		self.run = function(){
 			// PRELOADER
-            if ($('body').hasClass('hide')) {
+            /*if ($('body').hasClass('hide')) {
                 $('.preloader').fadeOut(1000, function(){
                     setTimeout(function(){$('.preloader').remove(); },2000);
                     $('body').removeClass('hide');
@@ -14,7 +14,7 @@ define(['jquery','navgoco','bootstrap'], function($,navgoco)
                 $('.preloader').fadeOut(1000, function(){
                     $('.preloader').remove();
                 });
-            }
+            }*/
             
             $('.sidey .nav').navgoco();
 

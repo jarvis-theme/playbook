@@ -8,8 +8,8 @@
             Daftarkan email anda dan dapatkan segera promo menarik.
         </p>
         <form class="newsletter-form inputfooter" action="{{@$mailing->action}}" method="post" target="_blank" novalidate>
-            <input class="input-newsletter"  type="text" value="" {{ @$mailing->action==''?'disabled="disabled"':'' }} placeholder="masukkan email anda" name="EMAIL" class="input-medium required email" id="newsletter mce-EMAIL"/>
-            <div class="fr ">
+            <input class="input-newsletter"  type="text" placeholder="masukkan email anda" name="email" class="input-medium required email" id="newsletter mce-EMAIL" {{ @$mailing->action==''?'disabled="disabled"':'' }} />
+            <div class="fr">
                 <button class="submitnewletter" type="submit" {{ @$mailing->action==''?'disabled="disabled" style="opacity:0.5"':'' }}>SUBSCRIBE</button>
             </div>
             <div class="clr"></div>

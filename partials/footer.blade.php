@@ -24,19 +24,19 @@
                 	<div class="container">
                     	<div class="row">
                             <div id="about-foot" class="col-xs-12 col-sm-3 col-lg-4">
-                            	<h4 class="title">About Us</h4>
+                            	<h4 class="title">Tentang Kami</h4>
                             	<div class="block-content">
                                     <p>{{short_description(about_us()->isi,400)}}</p>
                                 </div>
                             </div>
 
-                            @foreach($tautan as $key=>$menu)
+                            @foreach(all_menu() as $key=>$menu)
                                 @if($key == '1' || $key == '2')
                                 <div id="links-foot" class="col-xs-12 col-sm-3 col-lg-2">
                                     <h4 class="title">{{$menu->nama}}</h4>
                                     <div class="block-content">
                                         <ul>
-                                        @foreach($quickLink as $link_menu)
+                                        @foreach($menu->link as $link_menu)
                                             @if($menu->id == $link_menu->tautanId)
                                             <li>
                                                 <a href="{{menu_url($link_menu)}}">{{$link_menu->nama}}</a>
@@ -50,7 +50,7 @@
                             @endforeach  
 
                             <div id="contact-foot" class="col-xs-12 col-sm-3 col-lg-3">
-                            	<h4 class="title">Contact Info</h4>
+                            	<h4 class="title">Hubungi Kami</h4>
                             	<div class="block-content">
                                     <p><strong>{{ucwords($kontak->nama)}}</strong></p>
                                     <p>{{$kontak->alamat}}</p><br>
@@ -58,7 +58,7 @@
                                     <p><strong>Telpon :</strong> {{$kontak->telepon}}<br>
                                     @endif
                                     @if(!empty($kontak->hp))
-                                    <strong>HP :</strong> {{$kontak->hp}}<br>
+                                    <strong>SMS :</strong> {{$kontak->hp}}<br>
                                     @endif
                                     @if(!empty($kontak->bb))
                                     <strong>BBM :</strong> {{$kontak->bb}}<br>
@@ -68,11 +68,11 @@
                                     @endif
                                     <br>
                                     <div class="social">
-                                    	<h4>Social Media</h4>
+                                    	<h4>Ikuti Kami</h4>
                                         @if(!empty($kontak->fb))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{url($kontak->fb)}}" target="_blank">
-                                                <i class="fa fa-facebook"></i>
+                                                <i class="fa fa-facebook" title="Facebook"></i>
                                             </a>
                                             <a href="{{url($kontak->fb)}}"><i class="fa fa-facebook"></i></a>
                                         </div>
@@ -80,7 +80,7 @@
                                         @if(!empty($kontak->tw))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{url($kontak->tw)}}" target="_blank">
-                                                <i class="fa fa-twitter"></i>
+                                                <i class="fa fa-twitter" title="Twitter"></i>
                                             </a>
                                             <a href="{{url($kontak->tw)}}"><i class="fa fa-twitter"></i></a>
                                         </div>
@@ -88,7 +88,7 @@
                                         @if(!empty($kontak->gp))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{url($kontak->gp)}}" target="_blank">
-                                                <i class="fa fa-google"></i>
+                                                <i class="fa fa-google" title="Google+"></i>
                                             </a>
                                             <a href="{{url($kontak->gp)}}"><i class="fa fa-google"></i></a>
                                         </div>
@@ -96,7 +96,7 @@
                                         @if(!empty($kontak->pt))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{url($kontak->pt)}}" target="_blank">
-                                                <i class="fa fa-pinterest"></i>
+                                                <i class="fa fa-pinterest" title="Pinterest"></i>
                                             </a>
                                             <a href="{{url($kontak->pt)}}"><i class="fa fa-pinterest"></i></a>
                                         </div>
@@ -104,7 +104,7 @@
                                         @if(!empty($kontak->tl))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{$kontak->tl}}" target="_blank">
-                                                <i class="fa fa-tumblr"></i>
+                                                <i class="fa fa-tumblr" title="Tumblr"></i>
                                             </a>
                                             <a href="{{$kontak->tl}}"><i class="fa fa-tumblr"></i></a>
                                         </div>
@@ -112,7 +112,7 @@
                                         @if(!empty($kontak->ig))
                                         <div class="social-btn">
                                             <a class="first-link" href="{{url($kontak->ig)}}" target="_blank">
-                                                <i class="fa fa-instagram"></i>
+                                                <i class="fa fa-instagram" title="Instagram"></i>
                                             </a>
                                             <a href="{{url($kontak->ig)}}"><i class="fa fa-instagram"></i></a>
                                         </div>
@@ -123,7 +123,31 @@
                         </div>
                     </div>
                 </div>
-               
+                <div class="payments">
+                    <div class="container">
+                        @if(list_banks()->count() > 0)
+                            @foreach(list_banks() as $value)
+                            <img src="{{bank_logo($value)}}" class="img-responsive logobank" alt="{{$value->bankdefault->nama}}" title="Payment">
+                            @endforeach
+                        @endif
+                        @if(count(list_payments()) > 0)
+                            @foreach(list_payments() as $pay)
+                                @if($pay->nama == 'ipaymu' && $pay->aktif == 1)
+                                <img src="{{url('img/bank/ipaymu.jpg')}}" class="img-responsive logobank" alt="ipaymu" title="Payment" />
+                                @endif
+                                @if($pay->nama == 'bitcoin' && $pay->aktif == 1)
+                                <img src="{{url('img/bitcoin.png')}}" class="img-responsive logobank" alt="bitcoin" title="Payment" />
+                                @endif
+                                @if($pay->nama == 'paypal' && $pay->aktif == 1)
+                                <img src="{{url('img/bank/paypal.png')}}" class="img-responsive logobank" alt="paypal" title="Payment" />
+                                @endif
+                            @endforeach
+                        @endif
+                        @if(count(list_dokus()) > 0 && list_dokus()->status == 1)
+                        <img src="{{url('img/bank/doku.jpg')}}" class="img-responsive logobank" alt="doku myshortcart" title="Payment" />
+                        @endif
+                    </div>
+                </div>
                 <div class="copyright">
                 	<div class="container">
                     	<p><strong>&copy; {{ short_description(Theme::place('title'),80) }} {{date('Y')}} All Right Reserved. </strong> Powered by <a href="http://jarvis-store.com" target="_blank">Jarvis Store</a></p>
