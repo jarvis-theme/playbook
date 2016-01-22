@@ -26,7 +26,7 @@
                 <div id="center-header">
                 	<div class="container">
                     	<div id="logo" class="fl">
-                            @if(@getimagesize( url(logo_image_url()) ))
+                            @if( logo_image_url() )
                             <a href="{{ url('home') }}"> {{HTML::image(logo_image_url(), 'Logo', array('width'=>'auto', 'class'=>'logos'))}}</a>
                             @else
                             <h2>

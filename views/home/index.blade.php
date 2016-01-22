@@ -1,6 +1,7 @@
     <div class="container">
         <div class="inner-column row">
             <div id="center_column" class="col-xs-12 col-sm-12 col-lg-12">
+                @if(best_seller()->count() > 0)
                 <div id="trending-home" class="product_home">
                     <div class="block-title">
                         <h2 class="fl">Produk <strong>Terlaris</strong></h2>
@@ -28,6 +29,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 <div id="best-seller-home" class="product_home">
                     <div class="block-title">
                         <h2 class="fl"><strong>Produk</strong> Kami</h2>
@@ -63,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+                @if(new_product()->count() > 0)
                 <div id="new-arrivals" class="product_home">
                     <div class="block-title">
                         <h2 class="fl">Produk <strong>Terbaru</strong></h2>
@@ -91,6 +94,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>
