@@ -1,13 +1,13 @@
-	<div class="container">
-    	<div class="breadcrumb"><p>Detail Produk</p></div>
-    	<div class="inner-column row">
+    <div class="container">
+        <div class="breadcrumb"><p>Detail Produk</p></div>
+        <div class="inner-column row">
             <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
                 <div class="powerup">
-                    {{pluginSidePowerup()}}
+                    {{pluginSidePowerup()}} 
                 </div>
                 <div id="categories" class="block sidey">
                     <div class="title"><h2>Kategori</h2></div>
-                	<ul class="block-content nav">
+                    <ul class="block-content nav">
                         @foreach(list_category() as $side_menu)
                             @if($side_menu->parent == '0')
                             <li>
@@ -38,7 +38,7 @@
                             @endif
                         @endforeach
                     </ul>
-                </div>                
+                </div>
                 <div id="latest-news" class="block">
                     <div class="title"><h2>Koleksi</h2></div>
                     <ul class="block-content">
@@ -52,23 +52,23 @@
                 <div id="adv-sidebar" class="block">
                     @foreach(vertical_banner() as $banners)
                     <a href="{{url($banners->url)}}">
-                        {{HTML::image(banner_image_url($banners->gambar),'Info Promo',array('width'=>'270','height'=>'388','class'=>'img-responsive'))}}
+                        {{HTML::image(banner_image_url($banners->gambar),'Info Promo',array('width'=>'270','height'=>'388','class'=>'img-responsive'))}} 
                     </a>
                     @endforeach
                 </div>
             </div>
             <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
-            	<div class="product-details">
+                <div class="product-details">
                     <form action="#" id="addorder">
-                    	<div class="row">
-                        	<div id="prod-left" class="col-xs-12 col-sm-6 col-lg-6">
-                            	<div class="big-image">
-                                    {{HTML::image(product_image_url($produk->gambar1,'medium'), $produk->nama)}}
+                        <div class="row">
+                            <div id="prod-left" class="col-xs-12 col-sm-6 col-lg-6">
+                                <div class="big-image">
+                                    {{HTML::image(product_image_url($produk->gambar1,'medium'), $produk->nama)}} 
                                     <a class="zoom fancybox" href="{{product_image_url($produk->gambar1,'large')}}" title="{{$produk->nama}}">&nbsp;</a>
                                 </div>
                             </div>
                             <div id="prod-right" class="col-xs-12 col-sm-6 col-lg-6">
-                            	<h2 class="name-title">{{$produk->nama}}</h2>
+                                <h2 class="name-title">{{$produk->nama}}</h2>
                                 @if(!empty($produk->hargaCoret))
                                 <h3 class="author"><del>{{price($produk->hargaCoret)}}</del></h3>
                                 @endif
@@ -76,7 +76,7 @@
                                 <div class="img-rating">{{sosialShare(url(product_url($produk)))}}</div>
 
                                 <div class="desc-prod">
-                                	<p class="title">Deskripsi Produk</p>
+                                    <p class="title">Deskripsi Produk</p>
                                     <p>{{$produk->deskripsi}}</p>
                                 </div>
 
@@ -89,7 +89,7 @@
                                                 <option value="">-- Pilih Opsi --</option>
                                                 @foreach ($opsiproduk as $key => $opsi)
                                                 <option value="{{$opsi->id}}" {{ $opsi->stok==0 ? 'disabled':''}} >
-                                                    {{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}}
+                                                    {{$opsi->opsi1.($opsi->opsi2=='' ? '':' / '.$opsi->opsi2).($opsi->opsi3=='' ? '':' / '.$opsi->opsi3)}} {{price($opsi->harga)}} 
                                                 </option>
                                                 @endforeach
                                             </select>
@@ -100,18 +100,18 @@
                                 @endif
 
                                 <div class="quantity">
-                                	<div class="form-group">
-                                    	<label class="col-xs-5 col-sm-4 control-label">Jumlah :</label>
+                                    <div class="form-group">
+                                        <label class="col-xs-5 col-sm-4 control-label">Jumlah :</label>
                                         <div class="col-xs-7 col-sm-8">
-                                            <button type='submit' class='qtyminus' field='qty' /><i class="fa fa-caret-left"></i></button>
-                                            <input type='text' name='qty' value='1' class='qty' />
-                                            <button type='button' value='+' class='qtyplus' field='qty' /><i class="fa fa-caret-right"></i></button>
+                                            <button type="submit" class="qtyminus" field="qty" /><i class="fa fa-caret-left"></i></button>
+                                            <input type="text" name="qty" value="1" class="qty" />
+                                            <button type="button" value="+" class="qtyplus" field="qty" /><i class="fa fa-caret-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 avail-info">
                                     @if(!empty($produk->stok))
-                                	<span class="instock">Stok tersedia <span class="ttl-stock">{{$produk->stok}} item</span></span>
+                                    <span class="instock">Stok tersedia <span class="ttl-stock">{{$produk->stok}} item</span></span>
                                     @else
                                     <span class="fa-stack fa-1x">
                                         <i id="emptystok" class="fa fa-circle fa-stack-2x"></i>
@@ -121,15 +121,15 @@
                                     @endif
                                 </div>
                                 <div class="attribute clr">
-                                	<fieldset class="attribute_fieldset">
-                                    	<div class="attribute_list">
-                                        	<div class="color-list">
-                                            	<ul id="color_to_pick_list" class="clearfix">
+                                    <fieldset class="attribute_fieldset">
+                                        <div class="attribute_list">
+                                            <div class="color-list">
+                                                <ul id="color_to_pick_list" class="clearfix">
                                                     @if($produk->gambar2!='')
-                                                	<li class="item col-xs-4">
+                                                    <li class="item col-xs-4">
                                                         <div class="img-container">
                                                             <a class="fancybox" href="{{product_image_url($produk->gambar2, 'large')}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar2,'thumb'),'Thumbnail 1',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                                {{HTML::image(product_image_url($produk->gambar2,'thumb'),'Thumbnail 1',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}} 
                                                             </a>
                                                         </div>
                                                     </li>
@@ -138,7 +138,7 @@
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
                                                             <a class="fancybox" href="{{product_image_url($produk->gambar3,'large')}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar3,'thumb'),'Thumbnail 2',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                                {{HTML::image(product_image_url($produk->gambar3,'thumb'),'Thumbnail 2',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}} 
                                                             </a>
                                                         </div>
                                                     </li>
@@ -147,7 +147,7 @@
                                                     <li class="item col-xs-4">
                                                         <div class="img-container">
                                                             <a class="fancybox" href="{{product_image_url($produk->gambar4,'large')}}" title="{{$produk->nama}}">
-                                                                {{HTML::image(product_image_url($produk->gambar4,'thumb'),'Thumbnail 3',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}}
+                                                                {{HTML::image(product_image_url($produk->gambar4,'thumb'),'Thumbnail 3',array('width'=>'122','height'=>'182','class'=>'img-responsive'))}} 
                                                             </a>
                                                         </div>
                                                     </li>
@@ -176,11 +176,11 @@
                     <div class="row">
                         <ul class="grid">
                             @foreach(other_product($produk, 4) as $relproduk)
-                       		<li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                            <li class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                                 <div class="prod-container">
                                     <div class="image-container">
                                         <a href="{{product_url($relproduk)}}">
-                                            {{HTML::image(product_image_url($relproduk->gambar1,'medium'),$relproduk->nama,array('class'=>'img-responsive'))}}
+                                            {{HTML::image(product_image_url($relproduk->gambar1,'medium'),$relproduk->nama,array('class'=>'img-responsive'))}} 
                                         </a>
                                         @if(is_outstok($relproduk))
                                         <div class="icon-info icon-sold">Sold</div>
@@ -205,7 +205,7 @@
                 </div>
                 @endif
 
-                {{pluginTrustklik()}}
+                {{ pluginComment(product_url($produk), @$produk) }} 
             </div>
         </div>
     </div>
