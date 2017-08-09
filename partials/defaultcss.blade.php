@@ -4,9 +4,9 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	@if($tema->isiCss=='') 
-	{{generate_theme_css('playbook/assets/css/style.css?v=001')}} 
+	{{generate_theme_css('playbook/assets/css/style.css?v=002')}} 
 	@else 
-	{{generate_theme_css('playbook/assets/css/editstyle.css')}} 
+	{{generate_theme_css('playbook/assets/css/editstyle.css?v=002')}} 
 	@endif 
 	{{generate_theme_css('playbook/assets/css/flexslider.css')}} 
 	{{generate_theme_css('playbook/assets/css/owl.carousel.css')}} 

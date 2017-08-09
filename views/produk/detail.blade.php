@@ -2,9 +2,6 @@
         <div class="breadcrumb"><p>Detail Produk</p></div>
         <div class="inner-column row">
             <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
-                <div class="powerup">
-                    {{pluginSidePowerup()}} 
-                </div>
                 <div id="categories" class="block sidey">
                     <div class="title"><h2>Kategori</h2></div>
                     <ul class="block-content nav">
@@ -56,6 +53,9 @@
                     </a>
                     @endforeach
                 </div>
+                <div class="powerup">
+                    {{pluginSidePowerup()}} 
+                </div>
             </div>
             <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
                 <div class="product-details">
@@ -63,7 +63,7 @@
                         <div class="row">
                             <div id="prod-left" class="col-xs-12 col-sm-6 col-lg-6">
                                 <div class="big-image">
-                                    {{HTML::image(product_image_url($produk->gambar1,'medium'), $produk->nama)}} 
+                                    {{HTML::image(product_image_url($produk->gambar1,''), $produk->nama)}} 
                                     <a class="zoom fancybox" href="{{product_image_url($produk->gambar1,'large')}}" title="{{$produk->nama}}">&nbsp;</a>
                                 </div>
                             </div>
@@ -83,8 +83,8 @@
                                 @if($opsiproduk->count() > 0)
                                 <div class="size-list">
                                     <div class="form-group">
-                                        <label class="col-xs-5 col-sm-4 control-label">Opsi :</label>
-                                        <div class="col-xs-7 col-sm-5">
+                                        <label class="col-xs-5 col-sm-12 col-md-4 control-label">Opsi :</label>
+                                        <div class="col-xs-7 col-sm-12 col-md-8">
                                             <select class="form-control attribute_select" name="opsiproduk">
                                                 <option value="">-- Pilih Opsi --</option>
                                                 @foreach ($opsiproduk as $key => $opsi)
@@ -101,11 +101,14 @@
 
                                 <div class="quantity">
                                     <div class="form-group">
-                                        <label class="col-xs-5 col-sm-4 control-label">Jumlah :</label>
-                                        <div class="col-xs-7 col-sm-8">
+                                        <label class="col-xs-12 col-md-12 col-lg-4 control-label">Jumlah :</label>
+                                        <div class="col-xs-12 col-md-12 col-lg-4 mb10">
                                             <button type="submit" class="qtyminus" field="qty" /><i class="fa fa-caret-left"></i></button>
                                             <input type="text" name="qty" value="1" class="qty" />
                                             <button type="button" value="+" class="qtyplus" field="qty" /><i class="fa fa-caret-right"></i></button>
+                                        </div>
+                                        <div class="col-xs-12 col-md-12 col-lg-4">
+                                            <button class="btn addtocart" type="submit"><i class="cart"></i>Beli</button>
                                         </div>
                                     </div>
                                 </div>
@@ -160,13 +163,6 @@
                             </div>
                             <div class="clr"></div>
                         </div>
-
-                        <div class="btm-details">
-                            <div class="button-detail fr">
-                                <button class="btn addtocart" type="submit"><i class="cart"></i>Beli</button>
-                            </div>
-                            <div class="clr"></div>
-                        </div>
                     </form>
                 </div>
 
@@ -190,7 +186,7 @@
                                         <div class="icon-info icon-new">New</div>
                                         @endif
                                     </div>
-                                    <h5 class="product-name">{{$relproduk->nama}}</h5>
+                                    <h5 class="product-name">{{short_description($relproduk->nama, 30)}}</h5>
                                     @if(!empty($relproduk->hargaCoret))
                                     <p class="author"><del>{{price($relproduk->hargaCoret)}}</del></p>
                                     @endif

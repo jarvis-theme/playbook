@@ -1,7 +1,7 @@
 <div class="container">
     <div class="inner-column row">
         <div id="center_column" class="col-lg-4 col-xs-12 col-sm-4">
-            <h2>Pelanggan Baru</h2><hr><br>
+            <h2>Pelanggan Baru</h2><hr>
             <p>Nikmati kemudahan berbelanja dengan mendaftar sebagai member.</p>
             <br>
             <div class="input-group">

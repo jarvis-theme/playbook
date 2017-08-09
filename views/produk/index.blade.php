@@ -4,9 +4,6 @@
     </div>
     <div class="inner-column row">
         <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
-            <div class="powerup">
-                {{pluginSidePowerup()}}
-            </div>
             <div id="categories" class="block sidey">
                 <div class="title"><h2>Kategori</h2></div>
                 <ul class="block-content nav">
@@ -80,6 +77,9 @@
                 </a>
                 @endforeach
             </div>
+            <div class="powerup">
+                {{pluginSidePowerup()}}
+            </div>
         </div>
         <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
         	<div class="product-list">
@@ -91,7 +91,7 @@
                             <div class="prod-container">
                                 <div class="image-container">
                                     <a href="{{product_url($produks)}}">
-                                        {{HTML::image(product_image_url($produks->gambar1,'medium'), $produks->nama, array('class'=>'img-responsive','id'=>'listproduk'))}}
+                                        {{HTML::image(product_image_url($produks->gambar1,''), $produks->nama, array('class'=>'img-responsive','id'=>'listproduk'))}}
                                     </a>
                                     @if(is_outstok($produks))
                                     <div class="icon-info icon-sold">Sold</div>

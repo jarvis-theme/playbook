@@ -7,13 +7,13 @@
 			<hr><br>
             <form class="form-horizontal" action="{{url('member/recovery/'.$id.'/'.$code)}}" method="post">
 				<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2">Password</label>
+			    	<label class="col-sm-2">Password</label>
 					<div class="col-sm-4">
 			    		<input type="password" class="form-control" name="password" placeholder="Password" required>
 			   		</div>
 				</div>
 				<div class="form-group">
-			    	<label for="inputPassword3" class="col-sm-2">Konfirmasi password</label>
+			    	<label class="col-sm-2">Konfirmasi password</label>
 					<div class="col-sm-4">
 			    		<input type="password" class="form-control" name="password_confirmation" placeholder="Konfirmasi password" required>
 			   		</div>

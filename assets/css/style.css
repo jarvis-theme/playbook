@@ -122,6 +122,7 @@ header #top-head {
 header #logo {
 	text-align:center;
 	margin:20px 0px;
+	line-height: 100px;
 }
 header #logo a:hover {opacity:0.9}
 
@@ -572,7 +573,6 @@ input#qty {
 #prod-right .avail-info {
     color: #454444;
     font-size: 13px;
-    padding: 0px;
 	margin:27px 0 0;
 	float:left
 }
@@ -610,15 +610,34 @@ input#qty {
 	display:inline-block
 }
 .product-details .btm-details .btn:hover {background:#e6ab60} 
-.product-details .btm-details .addtocart {background:#82c055; margin-right:20px; padding:8px 20px}
-.product-details .btm-details .addtocart i.cart {
+.product-details .btm-details .addtocart,
+.btn.addtocart {
+	background:#82c055;
+	margin-right:20px;
+	padding:8px 20px;
+}
+.product-details .btm-details .addtocart i.cart,
+.addtocart i.cart {
 	background: url("../images/ico-cart.png") no-repeat;
     display: inline-block;
     height: 11px;
     margin-right: 10px;
     width: 15px;
 }
-.product-details .btm-details .addtocart:hover {background:#6fa845}
+.product-details .btm-details .addtocart:hover,
+.addtocart:hover {
+	background:#6fa845;
+}
+.addtocart {
+	text-transform:uppercase; 
+	color:#fff; 
+	font-size:13px; 
+	font-weight:400; 
+	padding:9px 30px;
+	margin-top:2px;
+	display:inline-block;
+	margin-right: 0;
+}
 
 #related-product h2 {
 	background: #e7b2e1;
@@ -812,8 +831,9 @@ footer .copyright p {margin:0}
 	.top-list .btn-thumb {float:none; text-align:center}
 	.big-image img, .btm-details img {height:auto}
 	.btm-details img {margin-bottom:20px}
-	.product_home .block-title h2 {float:none}
+	.product_home .block-title h2 {float:none; display: inline-block;}
 	.product_home .view-shop {float:none; display:inline-block}
+	.product_home .fr { float: right; }
 }
 
 .inputfooter{
@@ -1107,7 +1127,7 @@ fieldset[disabled] .btn-default.focus, input[type=submit] {
   border-color: #ccc;
 }
 
-.powerup{padding: 20px;margin-bottom: 20px;border: 1px solid #8fb431}
+.powerup{padding: 20px;margin-bottom: 20px;}
 center#paypal button[type="submit"] {
 	background: #019CDE;
 	border: none;
@@ -1125,3 +1145,41 @@ form[name="order"] > input[name="SAVE"]:hover {
 }
 .btn-pay { background: #00aee7; border: none; padding: 10px; border-radius: 5px; color: #fff }
 .btn-pay:hover { cursor: pointer; opacity: 0.7; color: #fff }
+.ar { text-align: right; }
+.al { text-align: left; }
+#left_sidebar .bg-none,
+.bg-none {
+	background: transparent;
+	border: none; box-shadow: none;
+}
+.btn:active {
+	margin-top: 0px;
+}
+.size-list label,
+.quantity label {
+	line-height: 35px;
+	text-align: right;
+}
+.mb10 { margin-bottom: 10px; }
+.mb20 { margin-bottom: 20px; }
+.mb30 { margin-bottom: 30px; }
+.social-picmix { display: inline-block; }
+.picmix {
+    height: 45px;
+    margin-top: -32px;
+    opacity: 0.6;
+}
+.picmix:hover { opacity: 1; }
+
+@media (max-width: 1199px) {
+	.confirm { text-align: center; }
+	.size-list label { text-align: left; }
+	.quantity label { text-align: left; }
+}
+@media (min-width: 769px) {
+	#search-top {
+		position: absolute;
+		right: 140px;
+		top: 90px;
+	}
+}

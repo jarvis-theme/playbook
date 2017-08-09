@@ -1,7 +1,7 @@
 <div class="container">
     <div class="inner-column row">
         <div id="left_sidebar" class="col-xs-12 col-lg-3">
-            <div id="advertising" class="block">
+            <div id="advertising" class="block bg-none">
             @foreach(vertical_banner() as $banner)
             <div class="img-block">
                 <a href="{{url($banner->url)}}">
@@ -11,11 +11,11 @@
             @endforeach
             </div>
         </div>
-        <div id="center_column" class="col-xs-12 col-lg-5">
-            <div class="contact-us">
+        <div id="center_column" class="col-xs-12 col-lg-5 mb20">
+            <div class="confirm">
                 <h2 class="title">Konfirmasi Order</h2>
                 {{Form::open(array('url'=>'konfirmasiorder','method'=>'post','class'=>'form-inline'))}} 
-                    <div class="input-group col-lg-12">
+                    <div class="input-group col-lg-12 al">
                         <input class="form-control" placeholder="Kode Order" type="text" name="kodeorder" required>
                         <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Cari Kode</button>

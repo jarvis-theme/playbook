@@ -37,7 +37,7 @@
 			</form>
 			<br>
 	    </div>
-	    <div class="col-lg-3 col-xs-12">
+	    <div class="col-lg-3 col-xs-12 center">
 	    	@foreach(vertical_banner() as $banners)
 	    	{{HTML::image(banner_image_url($banners->gambar), 'Info Promo')}}
 	    	<br>

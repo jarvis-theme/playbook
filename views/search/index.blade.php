@@ -3,9 +3,6 @@
     <div class="breadcrumb"><p>Hasil Pencarian</p></div>
     <div class="inner-column row">
         <div id="left_sidebar" class="col-xs-12 col-sm-4 col-lg-3">
-            <div class="powerup">
-                {{pluginSidePowerup()}}
-            </div>
             <div id="categories" class="block sidey">
                 <div class="title"><h2>Kategori</h2></div>
                 <ul class="block-content nav">
@@ -80,6 +77,9 @@
                     {{HTML::image(banner_image_url($banners->gambar),'Info Promo',array('width'=>'270','height'=>'388','class'=>'img-responsive'))}}
                 </a>
                 @endforeach
+            </div>
+            <div class="powerup">
+                {{pluginSidePowerup()}}
             </div>
         </div>
         <div id="center_column" class="col-xs-12 col-sm-8 col-lg-9">
